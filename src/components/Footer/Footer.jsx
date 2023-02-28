@@ -1,12 +1,12 @@
 import React from "react";
-
+import { StyledFooter } from "./Footer.styled";
 const Footer = () => {
   const date = new Date();
   const year = date.getFullYear();
   return (
-    <footer>
+    <StyledFooter>
       <p>&copy; {year} All Rights Reserved</p>
-    </footer>
+    </StyledFooter>
   );
 };
 

@@ -1,23 +1,17 @@
 import React from "react";
-import { Outlet, Link } from "react-router-dom";
-import Footer from "../Footer/Footer";
-
+import { Outlet } from "react-router-dom";
+import { Navigation, Footer } from "..";
+import { Container, Header, Logo} from "./SharedLayout.styled";
 const SharedLayout = () => {
   return (
-    <div>
-      <header>
-        <nav>
-          <Link to="/">NONAME SHOP</Link>
-          
-          <Link to="/login">Login</Link>
-          <Link to="/cart">Cart</Link>
-        </nav>
-      </header>
-     
-        <Outlet />
-      
+    <Container>
+      <Header>
+        <Logo to="/">NONAME SHOP</Logo> 
+        <Navigation />
+      </Header>
+      <Outlet />
       <Footer />
-    </div>
+    </Container>
   );
 };
 

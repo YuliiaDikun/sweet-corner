@@ -1,9 +1,11 @@
-import React from 'react'
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from "./Navigation.styled";
+
 const Navigation = () => {
   return (
      <nav>
-      <Link to="/">NONAME SHOP</Link>      
+      
+      <Link to="/">Home</Link>
       <Link to="/login">Login</Link>
       <Link to="/cart">Cart</Link>
     </nav>
