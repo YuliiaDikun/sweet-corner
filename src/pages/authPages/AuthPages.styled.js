@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-export const Auth = styled.section`
+export const StyledAuth = styled.section`
   min-height: 90vh;
   display: flex;
   justify-content: space-around;

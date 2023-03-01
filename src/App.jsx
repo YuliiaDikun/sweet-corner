@@ -2,6 +2,8 @@ import "./App.css";
 import { ThemeProvider } from 'styled-components';
 import { GlobalStyleComponent } from './styles/GlobalStyles';
 import { theme } from './styles/theme';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 import { Route, Routes } from "react-router-dom";
 import SharedLayout from "./components/SharedLayout/SharedLayout";
@@ -20,6 +22,11 @@ function App() {
         </Route>
         </Routes>
         <GlobalStyleComponent />
+        <ToastContainer
+            autoClose={2000}
+            hideProgressBar={true}
+            position="top-right"
+          />
       </ThemeProvider>
     </>
   );

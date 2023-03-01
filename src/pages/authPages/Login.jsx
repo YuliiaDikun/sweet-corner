@@ -3,7 +3,7 @@ import login from "../../assets/auth/login.png";
 import { FaGoogle } from "react-icons/fa";
 import Card from "../../components/Card/Card";
 import {
-  Auth,
+  StyledAuth,
   ImgWrapper,
   FormWrapper,
   FormTitle,
@@ -12,10 +12,10 @@ import {
   StyledSpan,
   RegisterWrapper,
   StyledLink,
-} from "./Auth.styled";
+} from "./AuthPages.styled";
 const Login = () => {
   return (
-    <Auth>
+    <StyledAuth>
       <ImgWrapper>
         <img src={login} alt="login" width="200" />
       </ImgWrapper>
@@ -38,7 +38,7 @@ const Login = () => {
           </RegisterWrapper>
         </FormWrapper>
       </Card>
-    </Auth>
+    </StyledAuth>
   );
 };
 
