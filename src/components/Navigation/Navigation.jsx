@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import {
+  HederWrapper,
   StyledNav,
   NavWrapper,
   Link,
@@ -29,7 +30,7 @@ const Navigation = () => {
   );
   const logo = <Logo to="/">NONAME SHOP</Logo>;
   return (
-    <>
+    <HederWrapper>
       {logo}
       <StyledNav open={isMobileMenuOpen}>
         <NavWrapper open={isMobileMenuOpen} onClick={hideMenu}></NavWrapper>
@@ -57,7 +58,7 @@ const Navigation = () => {
           <RxHamburgerMenu size={20} onClick={toggleMenu} />
         )}
       </MobileWrapper>
-    </>
+    </HederWrapper>
   );
 };
 

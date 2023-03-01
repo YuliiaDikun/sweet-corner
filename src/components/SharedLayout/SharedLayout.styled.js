@@ -19,15 +19,9 @@ export const Container = styled.div`
   }
 `;
 export const Header = styled.header`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  padding: 8px;
-  margin-bottom: 16px;
-  border-bottom: 1px solid black;
+  width: 100%;
+  transition: all 0.5s;
+  z-index: 9;
   background-color: ${({ theme }) => theme.colors.dark};
   color: ${({ theme }) => theme.colors.white};
-  max-width: ${({ theme }) => theme.media.desktop};
-  margin: 0 auto;
 `;

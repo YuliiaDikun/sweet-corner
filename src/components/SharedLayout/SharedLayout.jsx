@@ -9,9 +9,9 @@ const SharedLayout = () => {
           <Navigation />       
       </Header>
       <Container>
-        <Outlet />
-        <Footer />
+        <Outlet />        
       </Container>
+      <Footer />
     </>
   );
 };

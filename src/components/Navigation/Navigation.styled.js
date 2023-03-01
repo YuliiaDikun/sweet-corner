@@ -1,6 +1,17 @@
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 
+export const HederWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 8px;
+  margin-bottom: 16px;
+  max-width: ${({ theme }) => theme.media.desktop};
+  margin: 0 auto;
+`;
+
 export const StyledNav = styled.nav`
   @media screen and (max-width: 767px) {
     display: block;
@@ -64,7 +75,6 @@ export const Logo = styled(NavLink)`
 
 export const Link = styled(NavLink)`
   padding: ${({ theme }) => theme.spacing(2)} ${({ theme }) => theme.spacing(4)};
-  border-radius: ${({ theme }) => theme.spacing(1)};
   text-decoration: none;
   color: ${({ theme }) => theme.colors.white};
   font-weight: 500;
@@ -76,6 +86,7 @@ export const Link = styled(NavLink)`
 
   &.active {
     color: white;
+    border-bottom: 1px solid ${({ theme }) => theme.colors.white};
   }
   span {
     font-size: 12px;

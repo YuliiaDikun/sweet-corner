@@ -1,11 +1,14 @@
 import styled from "styled-components";
 
 export const StyledFooter = styled.footer`
+  background-color: ${({ theme }) => theme.colors.dark};
+  color: #fff;
+  font-size: ${({ theme }) => theme.spacing(4)};
   display: flex;
+  justify-content: center;
   align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  padding: 8px 0;
-  margin-top: 16px;
-  border-top: 1px solid black;
+  height: ${({ theme }) => theme.spacing(10)};
+  p {
+    color: #fff;
+  }
 `;
