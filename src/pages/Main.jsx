@@ -1,9 +1,9 @@
 import React from 'react'
-import Banner from '../components/Banner/Banner';
-import ProductsList from '../components/ProductsList/ProductsList';
+import { Banner, ProductsList} from '../components'
+
 const Main = () => {
   return (
-    <main>
+    <main>      
       <Banner />
       <ProductsList/>
     </main>
