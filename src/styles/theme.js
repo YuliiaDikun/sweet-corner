@@ -1,6 +1,6 @@
 export const theme = Object.freeze({
   colors: {
-    accent: "#002D62",
+    accent: "#62002f",
     white: "#ffffff",
     grey: "#6699CC",
     light: "#A3C1AD",
@@ -21,5 +21,10 @@ export const theme = Object.freeze({
   },
   animation: {
     cubicBezier: "0.25s cubic-bezier(0.7, 0.98, 0.86, 0.98)",
+  },
+  media: {
+    mobile: "480px",
+    tablet: "768px",
+    desktop: "1280px",
   },
 });

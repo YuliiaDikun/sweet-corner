@@ -5,7 +5,7 @@ import { theme } from './styles/theme';
 
 import { Route, Routes } from "react-router-dom";
 import SharedLayout from "./components/SharedLayout/SharedLayout";
-import { Main, Cart, Login } from "./pages";
+import { Main, Cart, Login, Register } from "./pages";
 
 function App() {
   return (
@@ -14,7 +14,8 @@ function App() {
       <Routes>
         <Route path="/" element={<SharedLayout />}>
           <Route index element={<Main />} />
-          <Route path="login" element={<Login />} />
+            <Route path="login" element={<Login />} />
+            <Route path="register" element={<Register />} />
           <Route path="cart" element={<Cart />} />
         </Route>
         </Routes>

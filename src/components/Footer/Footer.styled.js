@@ -6,6 +6,6 @@ export const StyledFooter = styled.footer`
   justify-content: space-between;
   gap: 12px;
   padding: 8px 0;
-  margin-bottom: 16px;
+  margin-top: 16px;
   border-top: 1px solid black;
 `;
