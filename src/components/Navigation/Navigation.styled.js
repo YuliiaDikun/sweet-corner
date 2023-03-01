@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 
 export const HederWrapper = styled.div`
   display: flex;
@@ -73,7 +73,19 @@ export const Logo = styled(NavLink)`
   }
 `;
 
-export const Link = styled(NavLink)`
+export const Logout = styled(NavLink, Link)`
+  padding: ${({ theme }) => theme.spacing(2)} ${({ theme }) => theme.spacing(4)};
+  text-decoration: none;
+  color: ${({ theme }) => theme.colors.white};
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: ${({ theme }) => theme.spacing(1)};
+  position: relative;
+`;
+
+export const StyledLink = styled(NavLink, Link)`
   padding: ${({ theme }) => theme.spacing(2)} ${({ theme }) => theme.spacing(4)};
   text-decoration: none;
   color: ${({ theme }) => theme.colors.white};

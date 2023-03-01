@@ -13,7 +13,11 @@ import {
   RegisterWrapper,
   StyledLink,
 } from "./AuthPages.styled";
-import { signInWithEmailAndPassword } from "firebase/auth";
+import {
+  signInWithEmailAndPassword,
+  signInWithPopup,
+  GoogleAuthProvider,
+} from "firebase/auth";
 import { auth } from "../../firebase/config";
 import { Loader } from "../../components";
 import { toast } from "react-toastify";
@@ -28,18 +32,32 @@ const Login = () => {
 
   const loginUser = (e) => {
     e.preventDefault();
-    if (!email.length || !password.length) { 
-      toast.error('Select required fields!');
+    if (!email.length || !password.length) {
+      toast.error("Select required fields!");
       return;
     }
     setIsLoading(true);
     signInWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {        
+      .then((userCredential) => {
         const user = userCredential.user;
-        toast.success('Welcome!');
-        navigate('/')
+        toast.success("Welcome!");
+        navigate("/");
       })
-      .catch((error) => {       
+      .catch((error) => {
+        toast.error(error.message);
+      })
+      .finally(() => setIsLoading(false));
+  };
+  const provider = new GoogleAuthProvider();
+  const googleSingIn = () => {
+    setIsLoading(true);
+    signInWithPopup(auth, provider)
+      .then((result) => {
+        const user = result.user;
+        toast.success("Welcome!");
+        navigate("/");
+      })
+      .catch((error) => {
         toast.error(error.message);
       })
       .finally(() => setIsLoading(false));
@@ -74,7 +92,7 @@ const Login = () => {
               <Button type="submit">Login</Button>
             </StyledForm>
             <StyledSpan>-- or --</StyledSpan>
-            <Button type="button">
+            <Button type="button" onClick={googleSingIn}>
               <FaGoogle /> Login with Google
             </Button>
             <RegisterWrapper>

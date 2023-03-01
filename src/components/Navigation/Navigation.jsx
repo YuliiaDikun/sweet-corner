@@ -3,7 +3,8 @@ import {
   HederWrapper,
   StyledNav,
   NavWrapper,
-  Link,
+  StyledLink,
+  Logout,
   Logo,
   MobileWrapper,
 } from "./Navigation.styled";
@@ -15,10 +16,12 @@ import { auth } from "../../firebase/config";
 import { Loader } from "../../components";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { useNavigate } from "react-router";
 
 const Navigation = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const navigate = useNavigate();
 
   const toggleMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -33,6 +36,7 @@ const Navigation = () => {
     signOut(auth)
       .then(() => {
         toast.success("Bye! Come back to us soon.");
+        navigate('/');
       })
       .catch((error) => {
         toast.error(error.message);
@@ -42,9 +46,9 @@ const Navigation = () => {
 
   const shopItems = 0;
   const cart = (
-    <Link to="/cart">
+    <StyledLink to="/cart">
       Cart <AiOutlineShoppingCart size={20} /> <span>{shopItems}</span>
-    </Link>
+    </StyledLink>
   );
   const logo = <Logo to="/">NONAME SHOP</Logo>;
   return (
@@ -57,18 +61,18 @@ const Navigation = () => {
           <ul onClick={hideMenu}>
             <li>{logo}</li>
             <li>
-              <Link to="/">Home</Link>
+              <StyledLink to="/">Home</StyledLink>
             </li>
             <li>
-              <Link to="/login">Login</Link>
+              <StyledLink to="/login">Login</StyledLink>
             </li>
             <li>
-              <Link to="/register">Register</Link>
+              <StyledLink to="/register">Register</StyledLink>
             </li>
             <li>
-              <Link to="/" onClick={logoutUser}>
+              <Logout to="/" onClick={logoutUser}>
                 Logout
-              </Link>
+              </Logout>
             </li>
             <li>{cart}</li>
           </ul>
