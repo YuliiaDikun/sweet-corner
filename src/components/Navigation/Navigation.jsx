@@ -35,7 +35,7 @@ const Navigation = () => {
       <StyledNav open={isMobileMenuOpen}>
         <NavWrapper open={isMobileMenuOpen} onClick={hideMenu}></NavWrapper>
         <ul onClick={hideMenu}>
-          <li>{ logo}</li>
+          <li>{logo}</li>
           <li>
             <Link to="/">Home</Link>
           </li>
@@ -45,10 +45,13 @@ const Navigation = () => {
           <li>
             <Link to="/register">Register</Link>
           </li>
+          <li>
+            <Link to="/" onClick={logoutUser}>
+              Logout
+            </Link>
+          </li>
           <li>{cart}</li>
         </ul>
-
-        
       </StyledNav>
       <MobileWrapper>
         {cart}

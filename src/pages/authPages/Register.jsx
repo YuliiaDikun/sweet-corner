@@ -35,13 +35,14 @@ const Register = () => {
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         const user = userCredential.user;
-        console.log(user);        
+        console.log(user);
         toast.success("Registration is successful!");
         navigate("/login");
       })
       .catch((error) => {
         toast.error(error.message);
-      }).finally(() => setIsLoading(false));
+      })
+      .finally(() => setIsLoading(false));
     e.currentTarger.reset();
   };
 
