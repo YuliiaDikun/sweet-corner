@@ -16,8 +16,23 @@ export const StyledNav = styled.nav`
     transform: ${({ open }) => (open ? "translateX(0)" : "translateX(-200%)")};
     transition: all 0.3s;
   }
+  ul li {
+    text-align: center;
+  }
   @media screen and (min-width: 768px) {
     display: flex;
+    ul {
+      display: flex;
+      justify-content: space-between;
+      list-style: none;
+
+      li {
+        margin: 0 5px;
+        &:first-child {
+          display: none;
+        }
+      }
+    }
   }
 `;
 

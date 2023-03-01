@@ -33,10 +33,21 @@ const Navigation = () => {
       {logo}
       <StyledNav open={isMobileMenuOpen}>
         <NavWrapper open={isMobileMenuOpen} onClick={hideMenu}></NavWrapper>
-        <Link to="/">Home</Link>
-        <Link to="/login">Login</Link>
-        <Link to="/register">Register</Link>
-        {cart}
+        <ul onClick={hideMenu}>
+          <li>{ logo}</li>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/login">Login</Link>
+          </li>
+          <li>
+            <Link to="/register">Register</Link>
+          </li>
+          <li>{cart}</li>
+        </ul>
+
+        
       </StyledNav>
       <MobileWrapper>
         {cart}
