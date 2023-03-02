@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   HederWrapper,
   StyledNav,
@@ -8,10 +8,10 @@ import {
   Logo,
   MobileWrapper,
 } from "./Navigation.styled";
-import { AiOutlineShoppingCart } from "react-icons/ai";
+import { AiOutlineShoppingCart, AiOutlineUser } from "react-icons/ai";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { MdClose } from "react-icons/md";
-import { signOut } from "firebase/auth";
+import { onAuthStateChanged, signOut } from "firebase/auth";
 import { auth } from "../../firebase/config";
 import { Loader } from "../../components";
 import { toast } from "react-toastify";
@@ -21,7 +21,19 @@ import { useNavigate } from "react-router";
 const Navigation = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [userName, setUserName] = useState("");
   const navigate = useNavigate();
+
+  useEffect(() => {
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        const uid = user.uid;
+        setUserName(user.displayName);
+      } else {
+        setUserName("");
+      }
+    });
+  }, []);
 
   const toggleMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -36,7 +48,7 @@ const Navigation = () => {
     signOut(auth)
       .then(() => {
         toast.success("Bye! Come back to us soon.");
-        navigate('/');
+        navigate("/");
       })
       .catch((error) => {
         toast.error(error.message);
@@ -65,6 +77,9 @@ const Navigation = () => {
             </li>
             <li>
               <StyledLink to="/login">Login</StyledLink>
+            </li>
+            <li>
+              <Logout to="/"><AiOutlineUser size="20"/>Welcome, {userName}</Logout>
             </li>
             <li>
               <StyledLink to="/register">Register</StyledLink>
