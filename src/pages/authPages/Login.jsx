@@ -68,7 +68,7 @@ const Login = () => {
       {isLoading && <Loader />}
       <StyledAuth>
         <ImgWrapper>
-          <img src={login} alt="login" width="200" />
+          <img src={login} alt="login" width="300" />
         </ImgWrapper>
         <Card>
           <FormWrapper>

@@ -51,7 +51,7 @@ const Register = () => {
       {isLoading && <Loader />}
       <StyledAuth>
         <ImgWrapper>
-          <img src={register} alt="register" width="200" />
+          <img src={register} alt="register" width="300" />
         </ImgWrapper>
         <Card>
           <FormWrapper>

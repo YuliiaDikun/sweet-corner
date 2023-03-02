@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 export const StyledAuth = styled.section`
   min-height: 90vh;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
 `;
 export const ImgWrapper = styled.div`
