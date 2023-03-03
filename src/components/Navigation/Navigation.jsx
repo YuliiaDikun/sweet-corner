@@ -97,6 +97,9 @@ const Navigation = () => {
               <StyledLink to="/">Home</StyledLink>
             </li>
             <li>
+              <StyledLink to="/sweets">Sweets</StyledLink>
+            </li>
+            <li>
               <PublicLink>
                 <StyledLink to="/login">Login</StyledLink>
               </PublicLink>

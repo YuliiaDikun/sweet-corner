@@ -7,7 +7,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 import { Route, Routes } from "react-router-dom";
 import SharedLayout from "./components/SharedLayout/SharedLayout";
-import { Main, Cart, Login, Register } from "./pages";
+import { Main, Cart, Login, Register, SweetsPage } from "./pages";
 
 function App() {
   return (
@@ -15,7 +15,8 @@ function App() {
       <ThemeProvider theme={theme}>
       <Routes>
         <Route path="/" element={<SharedLayout />}>
-          <Route index element={<Main />} />
+            <Route index element={<Main />} />
+            <Route path="sweets" element={<SweetsPage />} />
             <Route path="login" element={<Login />} />
             <Route path="register" element={<Register />} />
           <Route path="cart" element={<Cart />} />
