@@ -43,3 +43,14 @@ section {
     transform: translateY(0);
   }
 }
+@keyframes slider {
+  0% {
+    visibility: visible;
+    top: 23rem;
+  }
+
+  100% {
+    visibility: visible;
+    top: 17rem;
+  }
+}
