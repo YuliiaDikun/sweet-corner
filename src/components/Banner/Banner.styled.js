@@ -60,6 +60,12 @@ export const Link = styled.a`
     border: 1px solid ${({ theme }) => theme.colors.accent};
   }
 `;
+
+export const Line = styled.hr`
+  height: 2px;
+  background-color: ${({ theme }) => theme.colors.accent};
+  width: 50%;
+`;
 export const iconStyle = {
   border: `2px solid ${theme.colors.accent}`,
   borderRadius: "50%",
