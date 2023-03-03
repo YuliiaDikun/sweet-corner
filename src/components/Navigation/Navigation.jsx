@@ -4,7 +4,7 @@ import {
   StyledNav,
   NavWrapper,
   StyledLink,
-  Logout,
+  HomeLink,
   Logo,
   MobileWrapper,
 } from "./Navigation.styled";
@@ -13,30 +13,37 @@ import { RxHamburgerMenu } from "react-icons/rx";
 import { MdClose } from "react-icons/md";
 import { onAuthStateChanged, signOut } from "firebase/auth";
 import { auth } from "../../firebase/config";
-import { Loader } from "../../components";
+import { Loader, ProtectedLink, PublicLink } from "../../components";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useNavigate } from "react-router";
-import { useDispatch } from "react-redux";
-import { setActiveUser, setLogoutUser} from "../../redux/auth/authSlise";
+import { useDispatch, useSelector } from "react-redux";
+import { setActiveUser, setLogoutUser } from "../../redux/auth/authSlise";
+import { selectIsLoggedIn } from "../../redux/auth/authSelectors";
+
 const Navigation = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [userName, setUserName] = useState("");
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const isLoggedIn = useSelector(selectIsLoggedIn);
 
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
-      if (user) {    
-        const name = user.displayName ? user.displayName : user.email.replace(/@.*/, "");        
+      if (user) {
+        const name = user.displayName
+          ? user.displayName
+          : user.email.replace(/@.*/, "");
         setUserName(name);
 
-        dispatch(setActiveUser({
-          email: user.email,
-          userName: name,
-          userId: user.uid,
-        }))
+        dispatch(
+          setActiveUser({
+            email: user.email,
+            userName: name,
+            userId: user.uid,
+          })
+        );
       } else {
         setUserName("");
         dispatch(setLogoutUser());
@@ -67,10 +74,14 @@ const Navigation = () => {
   };
 
   const shopItems = 0;
-  const cart = (
+  const cart = isLoggedIn ? (
     <StyledLink to="/cart">
       Cart <AiOutlineShoppingCart size={20} /> <span>{shopItems}</span>
     </StyledLink>
+  ) : (
+    <HomeLink to="/">
+      Cart <AiOutlineShoppingCart size={20} /> <span>{shopItems}</span>
+    </HomeLink>
   );
   const logo = <Logo to="/">NONAME SHOP</Logo>;
   return (
@@ -86,18 +97,29 @@ const Navigation = () => {
               <StyledLink to="/">Home</StyledLink>
             </li>
             <li>
-              <StyledLink to="/login">Login</StyledLink>
+              <PublicLink>
+                <StyledLink to="/login">Login</StyledLink>
+              </PublicLink>
             </li>
             <li>
-              <Logout to="/"><AiOutlineUser size="20"/>Welcome, {userName}</Logout>
+              <ProtectedLink>
+                <HomeLink to="/">
+                  <AiOutlineUser size="20" />
+                  Welcome, {userName}
+                </HomeLink>
+              </ProtectedLink>
             </li>
             <li>
-              <StyledLink to="/register">Register</StyledLink>
+              <PublicLink>
+                <StyledLink to="/register">Register</StyledLink>
+              </PublicLink>
             </li>
             <li>
-              <Logout to="/" onClick={logoutUser}>
-                Logout
-              </Logout>
+              <ProtectedLink>
+                <HomeLink to="/" onClick={logoutUser}>
+                  Logout
+                </HomeLink>
+              </ProtectedLink>
             </li>
             <li>{cart}</li>
           </ul>

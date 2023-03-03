@@ -73,7 +73,7 @@ export const Logo = styled(NavLink)`
   }
 `;
 
-export const Logout = styled(NavLink, Link)`
+export const HomeLink = styled(NavLink, Link)`
   padding: ${({ theme }) => theme.spacing(2)} ${({ theme }) => theme.spacing(4)};
   text-decoration: none;
   color: ${({ theme }) => theme.colors.white};
