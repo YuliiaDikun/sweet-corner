@@ -12,12 +12,21 @@ const authSlise = createSlice({
   name: "auth",
   initialState,
   reducers: {
-    setActiveUser: (state, action) => {
-      console.log(action.payload);
+    setActiveUser: (state, { payload }) => {
+      state.isLoggedIn = true;
+      state.email = payload.email;
+      state.userName = payload.userName;
+      state.userId = payload.userId;
+    },
+    setLogoutUser: (state, action) => {
+      state.isLoggedIn = false;
+      state.email = null;
+      state.userName = null;
+      state.userId = null;
     },
   },
 });
 
-export const { setActiveUser } = authSlise.actions;
+export const { setActiveUser, setLogoutUser } = authSlise.actions;
 
 export default authSlise.reducer;

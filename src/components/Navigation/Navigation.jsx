@@ -17,23 +17,32 @@ import { Loader } from "../../components";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useNavigate } from "react-router";
-
+import { useDispatch } from "react-redux";
+import { setActiveUser, setLogoutUser} from "../../redux/auth/authSlise";
 const Navigation = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [userName, setUserName] = useState("");
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
-      if (user) {
-        const uid = user.uid;
-        setUserName(user.displayName);
+      if (user) {    
+        const name = user.displayName ? user.displayName : user.email.replace(/@.*/, "");        
+        setUserName(name);
+
+        dispatch(setActiveUser({
+          email: user.email,
+          userName: name,
+          userId: user.uid,
+        }))
       } else {
         setUserName("");
+        dispatch(setLogoutUser());
       }
     });
-  }, []);
+  }, [dispatch]);
 
   const toggleMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -47,6 +56,7 @@ const Navigation = () => {
     setIsLoading(true);
     signOut(auth)
       .then(() => {
+        dispatch(setLogoutUser());
         toast.success("Bye! Come back to us soon.");
         navigate("/");
       })

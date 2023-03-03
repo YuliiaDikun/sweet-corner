@@ -38,8 +38,7 @@ const Login = () => {
     }
     setIsLoading(true);
     signInWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        const user = userCredential.user;
+      .then((userCredential) => {        
         toast.success("Welcome!");
         navigate("/");
       })
@@ -52,8 +51,7 @@ const Login = () => {
   const googleSingIn = () => {
     setIsLoading(true);
     signInWithPopup(auth, provider)
-      .then((result) => {
-        const user = result.user;
+      .then((result) => {        
         toast.success("Welcome!");
         navigate("/");
       })
