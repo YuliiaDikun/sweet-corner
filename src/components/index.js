@@ -7,3 +7,4 @@ export { default as ProtectedLink } from "./ProtectedLink/ProtectedLink";
 export { default as PublicLink } from "./PublicLink/PublicLink";
 export { default as AboutUs } from "./AboutUs/AboutUs";
 export { default as SocialLinks } from "./SocialLinks/SocialLinks";
+export { default as Product } from "./Product/Product";

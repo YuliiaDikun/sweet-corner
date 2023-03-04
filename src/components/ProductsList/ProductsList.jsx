@@ -1,30 +1,14 @@
 import React from "react";
 import {
-  StyledList,
-  Candy,
-  CandyWrapper,
-  ImgWrapper,
-  DescWrapper,
-  CandyText,
-  CandyDesc
+  StyledList,  
 } from "./ProductList.styled";
+import { Product} from '../'
 const ProductsList = ({ sweets }) => {
   return (
     <StyledList>
       {sweets.map((candy) => {
         return (
-          <Candy key={candy.id}>
-            <CandyWrapper>
-              <ImgWrapper>
-                <img src={candy.img} alt={candy.name} />
-              </ImgWrapper>
-              <DescWrapper>
-                <CandyText>{candy.name}</CandyText>
-                <CandyDesc>{candy.desc} </CandyDesc>
-                <button>Buy now</button>
-              </DescWrapper>
-            </CandyWrapper>
-          </Candy>
+          <Product key={candy.id} candy={candy } />
         );
       })}
     </StyledList>
