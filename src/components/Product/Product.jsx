@@ -6,6 +6,10 @@ import {
   DescWrapper,
   CandyText,
   CandyDesc,
+  ScoreWrapper,
+  Price,
+  PriceWrapper,
+  BuyBtn
 } from "./Product.styled";
 import { BsFillStarFill, BsStarHalf, BsCurrencyDollar } from "react-icons/bs";
 
@@ -20,22 +24,22 @@ const Product = ({ candy }) => {
         <DescWrapper>
           <CandyText>{candy.name}</CandyText>
           <CandyDesc>{candy.desc} </CandyDesc>
-          <div>
-            <div>
+          <PriceWrapper>
+            <ScoreWrapper>
               <span>
-                <BsFillStarFill size={25}/>
-                <BsFillStarFill size={25}/>
-                <BsFillStarFill size={25}/>
-                <BsFillStarFill size={25}/>
-                <BsStarHalf size={25}/>
+                <BsFillStarFill size={15}/>
+                <BsFillStarFill size={15}/>
+                <BsFillStarFill size={15}/>
+                <BsFillStarFill size={15}/>
+                <BsStarHalf size={15}/>
               </span>
               <span>{candy.scored}</span>
-            </div>
-            <div>
-              {candy.price} <BsCurrencyDollar size={25} />
-            </div>
-          </div>
-          <button>Buy now</button>
+            </ScoreWrapper>
+            <Price>
+              {candy.price} <BsCurrencyDollar size={20} />
+            </Price>
+          </PriceWrapper>
+          <BuyBtn>Buy now</BuyBtn>
         </DescWrapper>
       </CandyWrapper>
     </Candy>
