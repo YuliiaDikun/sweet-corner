@@ -4,14 +4,11 @@ import { Product } from "../";
 
 const ProductsList = ({ sweets }) => {
   return (
-    
-      
-      <StyledList>
-        {sweets.map((candy) => {
-          return <Product key={candy.id} candy={candy} />;
-        })}
-      </StyledList>
-   
+    <StyledList>
+      {sweets.map((candy) => {
+        return <Product key={candy.id} candy={candy} />;
+      })}
+    </StyledList>
   );
 };
 

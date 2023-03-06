@@ -5,9 +5,10 @@ import {
   AiFillStar,
   AiOutlineStar,
 } from "react-icons/ai";
-const Filter = () => {
+const Filter = ({ updateFiler}) => {
   const onFilterBtn = (e) => {
-    console.log(e.target.dataset.filter);
+    const filter = e.target.dataset.filter;
+    updateFiler(filter);
   };
 
   return (
