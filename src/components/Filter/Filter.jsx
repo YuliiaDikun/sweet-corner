@@ -5,6 +5,9 @@ import {
   AiFillStar,
   AiOutlineStar,
 } from "react-icons/ai";
+import { RxCross1 } from 'react-icons/rx';
+import { FilterWrapper, FilterBtn } from "./Filter.styled";
+
 const Filter = ({ updateFiler}) => {
   const onFilterBtn = (e) => {
     const filter = e.target.dataset.filter;
@@ -12,20 +15,23 @@ const Filter = ({ updateFiler}) => {
   };
 
   return (
-    <div>
-      <button data-filter="low-p" onClick={onFilterBtn}>
+    <FilterWrapper>
+      <FilterBtn data-filter="low-p" onClick={onFilterBtn}>
         low price <AiOutlineArrowDown />
-      </button>
-      <button data-filter="hight-p" onClick={onFilterBtn}>
+      </FilterBtn>
+      <FilterBtn data-filter="hight-p" onClick={onFilterBtn}>
         hight price <AiOutlineArrowUp />
-      </button>
-      <button data-filter="hight-r" onClick={onFilterBtn}>
+      </FilterBtn>
+      <FilterBtn data-filter="hight-r" onClick={onFilterBtn}>
         top rating <AiFillStar />
-      </button>
-      <button data-filter="low-r" onClick={onFilterBtn}>
+      </FilterBtn>
+      <FilterBtn data-filter="low-r" onClick={onFilterBtn}>
         low rating <AiOutlineStar />
-      </button>
-    </div>
+      </FilterBtn>
+      <FilterBtn data-filter="" onClick={onFilterBtn}>
+        Reset <RxCross1 />
+      </FilterBtn>
+    </FilterWrapper>
   );
 };
 

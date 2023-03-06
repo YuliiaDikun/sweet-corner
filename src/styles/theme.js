@@ -3,7 +3,7 @@ export const theme = Object.freeze({
     accent: "#62002f",
     white: "#ffffff",
     grey: "rgba(161, 171, 181, 0.6)",
-    light: "#A3C1AD",
+    light: "#898989",
     dark: "#002244",
     mainBackground: ["linear-gradient(to bottom, #c9d6ff,  #e2e2e2)"],
     tagBackground: ["linear-gradient(to bottom, #FFD194, #D1913C)"],
