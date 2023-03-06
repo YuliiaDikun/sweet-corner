@@ -14,6 +14,7 @@ export const Candy = styled(Link)`
 export const CandyWrapper = styled.div`
   display: flex;
   flex-direction: column;
+  min-width: 250px;
   height: 100%;
   list-style: none;
   text-decoration: none;

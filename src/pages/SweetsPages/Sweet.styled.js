@@ -31,3 +31,11 @@ export const StyledP = styled.p`
   margin-top: ${({ theme }) => theme.spacing(2)};
   margin-bottom: ${({ theme }) => theme.spacing(2)};
 `;
+
+export const MainContent = styled.div`
+  @media screen and (min-width: 768px) {
+    display: flex;
+    gap: ${({ theme }) => theme.spacing(7)};
+    justify-content: space-between;
+  }
+`;

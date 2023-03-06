@@ -12,3 +12,4 @@ export { default as MainBtn } from "./UI/BuyBtn";
 export { default as Score } from "./UI/Score";
 export { default as Price } from "./UI/Price";
 export { default as Filter } from "./Filter/Filter";
+export { default as Categories } from "./Categories/Categories";
