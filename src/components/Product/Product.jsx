@@ -5,18 +5,15 @@ import {
   ImgWrapper,
   DescWrapper,
   CandyText,
-  CandyDesc,
-  ScoreWrapper,
-  Price,
+  CandyDesc, 
   PriceWrapper,
-  BuyBtn
 } from "./Product.styled";
-import { BsFillStarFill, BsStarHalf, BsCurrencyDollar } from "react-icons/bs";
 
+
+import { MainBtn, Score, Price} from '../'
 const Product = ({ candy }) => {
-  console.log(candy);
   return (
-    <Candy>
+    <Candy to={`${candy.id}`}>
       <CandyWrapper>
         <ImgWrapper>
           <img src={candy.img} alt={candy.name} />
@@ -25,21 +22,10 @@ const Product = ({ candy }) => {
           <CandyText>{candy.name}</CandyText>
           <CandyDesc>{candy.desc} </CandyDesc>
           <PriceWrapper>
-            <ScoreWrapper>
-              <span>
-                <BsFillStarFill size={15}/>
-                <BsFillStarFill size={15}/>
-                <BsFillStarFill size={15}/>
-                <BsFillStarFill size={15}/>
-                <BsStarHalf size={15}/>
-              </span>
-              <span>{candy.scored}</span>
-            </ScoreWrapper>
-            <Price>
-              {candy.price} <BsCurrencyDollar size={20} />
-            </Price>
+            <Score scored={ candy.scored} />
+            <Price price={ candy.price} />
           </PriceWrapper>
-          <BuyBtn>Buy now</BuyBtn>
+         <MainBtn/>
         </DescWrapper>
       </CandyWrapper>
     </Candy>

@@ -1,5 +1,8 @@
 import styled from "styled-components";
-export const Candy = styled.li`
+import { Link } from "react-router-dom";
+
+export const Candy = styled(Link)`
+  color: ${({ theme }) => theme.colors.dark};
   @media screen and (min-width: 768px) {
     width: calc((100% - 80px) / 2);
   }
@@ -51,37 +54,8 @@ export const CandyDesc = styled.p`
   font-size: ${({ theme }) => theme.spacing(4)};
 `;
 
-export const ScoreWrapper = styled.div`
-  display: flex;
-  align-items: center;
-  gap: ${({ theme }) => theme.spacing(2)};
-`;
-
-export const Price = styled.div`
-  display: flex;
-  align-items: center;
-  font-size: ${({ theme }) => theme.spacing(4)};
-  font-weight: 500;
-`;
-
 export const PriceWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-`;
-
-export const BuyBtn = styled.button`
-  display: inline-block;
-  margin-top: ${({ theme }) => theme.spacing(2)};
-  padding: 8px 16px;
-  border: 1px solid ${({ theme }) => theme.colors.dark};
-  border-radius: ${({ theme }) => theme.spacing(1)};
-  background-color: transparent;
-  color: ${({ theme }) => theme.colors.dark};
-  transition: color 0.3s, background-color 0.3s;
-  &:hover,
-  &:focus {
-    color: ${({ theme }) => theme.colors.white};
-    background-color: ${({ theme }) => theme.colors.dark};
-  }
 `;

@@ -8,3 +8,7 @@ export { default as PublicLink } from "./PublicLink/PublicLink";
 export { default as AboutUs } from "./AboutUs/AboutUs";
 export { default as SocialLinks } from "./SocialLinks/SocialLinks";
 export { default as Product } from "./Product/Product";
+export { default as MainBtn } from "./UI/BuyBtn";
+export { default as Score } from "./UI/Score";
+export { default as Price } from "./UI/Price";
+export { default as Filter } from "./Filter/Filter";
