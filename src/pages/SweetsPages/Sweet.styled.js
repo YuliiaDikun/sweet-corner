@@ -36,6 +36,5 @@ export const MainContent = styled.div`
   @media screen and (min-width: 768px) {
     display: flex;
     gap: ${({ theme }) => theme.spacing(7)};
-    justify-content: space-between;
   }
 `;

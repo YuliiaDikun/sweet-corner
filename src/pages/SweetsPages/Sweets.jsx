@@ -3,6 +3,8 @@ import { collection, getDocs } from "firebase/firestore";
 import { db } from "../../firebase/config";
 import { MainContent } from "./Sweet.styled";
 import { ProductsList, Loader, Filter, Categories } from "../../components";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 const SweetsPage = () => {
   const [sweets, setSweets] = useState([]);
   const [filter, setFiler] = useState("");
@@ -19,7 +21,7 @@ const SweetsPage = () => {
         setSweets(updateSweets);
       })
 
-      .catch(alert)
+      .catch(err=> toast.error(err.message))
       .finally(setIsLoading(false));
     // eslint-disable-next-line
   }, []);

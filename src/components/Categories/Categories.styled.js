@@ -2,12 +2,11 @@ import styled from "styled-components";
 
 export const CategoryWrapper = styled.aside`
   padding-top: ${({ theme }) => theme.spacing(2)};
-
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
   gap: ${({ theme }) => theme.spacing(1)};
   @media screen and (min-width: 768px) {
-    flex-direction: column;
     gap: ${({ theme }) => theme.spacing(2)};
     max-width: 250px;
   }
