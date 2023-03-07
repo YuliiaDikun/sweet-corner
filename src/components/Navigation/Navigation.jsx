@@ -20,7 +20,7 @@ import { useNavigate } from "react-router";
 import { useDispatch, useSelector } from "react-redux";
 import { setActiveUser, setLogoutUser } from "../../redux/auth/authSlice";
 import { selectIsLoggedIn } from "../../redux/auth/authSelectors";
-
+import { selectTotalAmount } from "../../redux/cart/cartSelectors";
 const Navigation = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
@@ -28,7 +28,7 @@ const Navigation = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const isLoggedIn = useSelector(selectIsLoggedIn);
-
+  const totalAmount = useSelector(selectTotalAmount);
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
       if (user) {
@@ -73,14 +73,14 @@ const Navigation = () => {
       .finally(() => setIsLoading(false));
   };
 
-  const shopItems = 0;
+  
   const cart = isLoggedIn ? (
     <StyledLink to="/cart">
-      Cart <AiOutlineShoppingCart size={20} /> <span>{shopItems}</span>
+      Cart <AiOutlineShoppingCart size={20} /> <span>{totalAmount}</span>
     </StyledLink>
   ) : (
     <HomeLink to="/">
-      Cart <AiOutlineShoppingCart size={20} /> <span>{shopItems}</span>
+      Cart <AiOutlineShoppingCart size={20} /> <span>{totalAmount}</span>
     </HomeLink>
   );
   const logo = <Logo to="/">NONAME SHOP</Logo>;

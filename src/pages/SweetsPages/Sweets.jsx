@@ -8,7 +8,7 @@ import "react-toastify/dist/ReactToastify.css";
 const SweetsPage = () => {
   const [sweets, setSweets] = useState([]);
   const [filter, setFiler] = useState("");
-  const [category, setCategory] = useState('');
+  const [category, setCategory] = useState("");
   const [isLoading, setIsLoading] = useState(true);
   const sweetsCollectionRef = collection(db, "sweets");
   useEffect(() => {

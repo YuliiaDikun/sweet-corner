@@ -11,7 +11,7 @@ const CategoryBtn = ({isActive, onSelectedCategory, info, activeButton }) => {
   return (
     <li>
       <StyledCategoryBtn
-        isActive={isActive }
+        isActive={isActive}
         data-id={info.id}
         data-category={info.data}
         onClick={onBtnClicked}

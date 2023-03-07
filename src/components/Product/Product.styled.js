@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-export const Candy = styled(Link)`
+export const Candy = styled.li`
   color: ${({ theme }) => theme.colors.dark};
   @media screen and (min-width: 768px) {
     width: calc((100% - 80px) / 2);
@@ -25,7 +25,7 @@ export const CandyWrapper = styled.div`
       1px 4px 6px rgb(0 0 0 / 16%);
   }
 `;
-export const ImgWrapper = styled.div`
+export const ImgWrapper = styled(Link)`
   position: relative;
   overflow: hidden;
   img {
@@ -43,10 +43,29 @@ export const DescWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  overflow: hidden;
 `;
-export const CandyText = styled.h2`
+export const CandyText = styled(Link)`
   font-size: ${({ theme }) => theme.spacing(5)};
   font-weight: 500;
+  color: ${({ theme }) => theme.colors.dark};
+  padding-top: 10px;
+  padding-bottom: 5px;
+  &:before {
+    content: "";
+    left: -30px;
+    bottom: -100%;
+    width: 100%;
+    height: 2px;
+    display: block;
+    position: relative;
+    background: ${({ theme }) => theme.colors.dark};
+    transform: translateX(-100%);
+    transition: transform 0.3s;
+  }
+  &:hover:before {
+    transform: translateX(10%);
+  }
 `;
 export const CandyDesc = styled.p`
   margin-top: ${({ theme }) => theme.spacing(2)};
