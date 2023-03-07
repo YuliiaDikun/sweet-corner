@@ -11,12 +11,14 @@ import {
 
 
 import { MainBtn, Score, Price} from '../'
+import { useLocation } from "react-router-dom";
 const Product = ({ candy }) => {
+    const location = useLocation();
   return (
-    <Candy to={`${candy.id}`}>
+    <Candy to={`${candy.id}`} >
       <CandyWrapper>
         <ImgWrapper>
-          <img src={candy.img} alt={candy.name} />
+          <img src={candy.img} alt={candy.name} state={{ from: location }}/>
         </ImgWrapper>
         <DescWrapper>
           <CandyText>{candy.name}</CandyText>

@@ -1,12 +1,10 @@
 import styled from "styled-components";
 
-export const StyledMain = styled.main`
-  height: 90vh;
+export const StyledMain = styled.div`
   padding-top: 80px;
   @media screen and (min-width: 768px) {
     display: flex;
     gap: ${({ theme }) => theme.spacing(7)};
-    justify-content: space-between;
   }
 `;
 
