@@ -10,10 +10,15 @@ const cartSlice = createSlice({
   initialState,
   reducers: {
     addToCart: (state, { payload }) => {
-      console.log(payload);
+      const candy = payload;
+      candy["amount"] = 1;
+      state.cartItems = [...state.cartItems, candy];
+      state.amount += 1;
     },
     clearCart: (state) => {
       state.cartItems = [];
+      state.amount = 0;
+      state.total = 0;
     },
     removeItem: (state, action) => {
       const itemId = action.payload;

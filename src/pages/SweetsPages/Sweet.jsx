@@ -16,7 +16,13 @@ import {
   AdditionalCandies,
   Loader,
 } from "../../components";
-import { StyledMain, ImgWrapper, DescrWrapper, StyledP,GoBackLink } from "./Sweet.styled";
+import {
+  StyledMain,
+  ImgWrapper,
+  DescrWrapper,
+  StyledP,
+  GoBackLink,
+} from "./Sweet.styled";
 import { PriceWrapper } from "../../components/Product/Product.styled";
 import { MdOutlineArrowBackIosNew } from "react-icons/md";
 import { toast } from "react-toastify";
@@ -32,7 +38,11 @@ const SweetDetails = () => {
   const docRef = doc(db, "sweets", id);
   useEffect(() => {
     getDoc(docRef)
-      .then((sweet) => setSweet(sweet.data()))
+      .then((sweet) => { 
+        const candy = sweet.data();
+        candy.id = id;
+        setSweet(candy);
+      })
       .catch((error) => {
         toast.error(error.message);
       })
@@ -57,9 +67,9 @@ const SweetDetails = () => {
           setAddCandy(updateSweets);
         })
         .catch((error) => {
-        toast.error(error.message);
-      })
-      .finally(() => setIsLoading(false));
+          toast.error(error.message);
+        })
+        .finally(() => setIsLoading(false));
     }
   }, [sweet, id]);
 
@@ -68,7 +78,7 @@ const SweetDetails = () => {
   return (
     <main>
       <GoBackLink to={backLinkHref}>
-       <MdOutlineArrowBackIosNew size={20} /> Back to sweets 
+        <MdOutlineArrowBackIosNew size={20} /> Back to sweets
       </GoBackLink>
       {isLoading ? (
         <Loader />
@@ -86,7 +96,7 @@ const SweetDetails = () => {
               <Price price={sweet.price} />
               <Score scored={sweet.scored} />
             </PriceWrapper>
-            <MainBtn />
+            <MainBtn candy={sweet} />
           </DescrWrapper>
         </StyledMain>
       )}
