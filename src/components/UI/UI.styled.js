@@ -11,6 +11,7 @@ export const StyledMainBtn = styled.button`
   background-color: transparent;
   color: ${({ theme }) => theme.colors.dark};
   transition: color 0.3s, background-color 0.3s;
+  cursor: pointer;
   &:hover,
   &:focus {
     color: ${({ theme }) => theme.colors.white};

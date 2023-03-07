@@ -1,11 +1,19 @@
 import styled from "styled-components";
-
+import { Link } from "react-router-dom";
 export const StyledMain = styled.div`
-  padding-top: 80px;
+  padding-top: ${({ theme }) => theme.spacing(5)};
   @media screen and (min-width: 768px) {
     display: flex;
     gap: ${({ theme }) => theme.spacing(7)};
   }
+`;
+
+export const GoBackLink = styled(Link)`
+  display: flex;
+  padding-top: ${({ theme }) => theme.spacing(3)};
+  align-items: center;
+  gap: ${({ theme }) => theme.spacing(1)};
+  color: ${({ theme }) => theme.colors.light};
 `;
 
 export const ImgWrapper = styled.div`
@@ -15,7 +23,6 @@ export const ImgWrapper = styled.div`
     display: block;
     height: 100%;
     width: 100%;
-
     object-fit: cover;
   }
 `;

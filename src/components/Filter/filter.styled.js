@@ -22,6 +22,7 @@ export const FilterBtn = styled.button`
   color: ${({ theme }) => theme.colors.light};
   background-color: transparent;
   transition: color 0.3s, background-color 0.3s;
+  cursor: pointer;
   &:hover,
   &:focus {
     color: ${({ theme }) => theme.colors.white};

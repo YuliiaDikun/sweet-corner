@@ -1,8 +1,11 @@
 import styled from "styled-components";
 
 export const Section = styled.section`
-  padding: ${({ theme }) => theme.spacing(40)}
-    ${({ theme }) => theme.spacing(0)}; ;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
 `;
 export const Header = styled.h2`
   text-align: center;
@@ -12,11 +15,13 @@ export const Header = styled.h2`
   justify-content: center;
   align-items: center;
   gap: ${({ theme }) => theme.spacing(2)};
+  color: ${({ theme }) => theme.colors.dark};
 `;
 export const StyledParagraph = styled.p`
-  width: ${({ theme }) => theme.spacing(200)};
+  max-width: ${({ theme }) => theme.spacing(200)};
   margin: ${({ theme }) => theme.spacing(10)} auto
     ${({ theme }) => theme.spacing(10)} auto;
   text-align: center;
   font-weight: 500;
+  color: ${({ theme }) => theme.colors.dark};
 `;

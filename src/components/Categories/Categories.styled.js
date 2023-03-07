@@ -33,4 +33,9 @@ export const StyledCategoryBtn = styled.button`
   background-color: ${({ isActive }) => (isActive ? `transparent` : `#002244`)};
   transition: color 0.3s, background-color 0.3s;
   border-radius: ${({ theme }) => theme.spacing(1)};
+  cursor: pointer;
+  &:hover {
+    color: ${({ theme }) => theme.colors.dark};
+    background-color: ${({ theme }) => theme.colors.white};
+  }
 `;

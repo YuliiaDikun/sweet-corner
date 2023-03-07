@@ -1,6 +1,6 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { AdditionalList, AdditionalTitle } from "./AdditionalCandies.styled";
+
+import { AdditionalList, AdditionalTitle,AdditionalLink, AdditionalImgWrapper } from "./AdditionalCandies.styled";
 const AdditionalCandies = ({ addCandy }) => {
   return (
     <>
@@ -8,12 +8,12 @@ const AdditionalCandies = ({ addCandy }) => {
       <AdditionalList>
         {addCandy.map((candy) => {
           return (
-            <Link key={candy.id} to={`/sweets/${candy.id}`}>
-              <div>
+            <AdditionalLink key={candy.id} to={`/sweets/${candy.id}`}>
+              <AdditionalImgWrapper>
                 <img src={candy.img} alt={candy.name} />
-              </div>
+              </AdditionalImgWrapper>
               <p>{candy.name}</p>
-            </Link>
+            </AdditionalLink>
           );
         })}
       </AdditionalList>
