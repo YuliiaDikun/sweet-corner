@@ -18,7 +18,7 @@ import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useNavigate } from "react-router";
 import { useDispatch, useSelector } from "react-redux";
-import { setActiveUser, setLogoutUser } from "../../redux/auth/authSlise";
+import { setActiveUser, setLogoutUser } from "../../redux/auth/authSlice";
 import { selectIsLoggedIn } from "../../redux/auth/authSelectors";
 
 const Navigation = () => {
