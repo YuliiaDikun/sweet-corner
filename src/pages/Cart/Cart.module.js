@@ -3,6 +3,10 @@ import styled from "styled-components";
 
 export const CartSection = styled.section`
   text-align: center;
+  @media screen and (min-width: 768px) {
+    padding-left: 120px;
+    padding-right: 120px;
+  }
 `;
 
 export const CartTitle = styled.h2`
@@ -57,5 +61,32 @@ export const ImgWrapper = styled.div`
     height: 100%;
     width: 100%;
     object-fit: cover;
+  }
+`;
+
+export const PriceWrapper = styled.span`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  p {
+    font-size: 20px;
+    color: ${({ theme }) => theme.colors.dark};
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+`;
+
+export const ClearCartBtn = styled.button`
+  cursor: pointer;
+  padding: 8px 16px;
+  background-color: transparent;
+  border: 1px solid ${({ theme }) => theme.colors.accent};
+  border-radius: 4px;
+  color: ${({ theme }) => theme.colors.accent};
+  font-size: 18px;
+  font-weight: 500;
+  transition: transform 0.3s;
+  &:hover {
+    transform: scale(1.01);
   }
 `;

@@ -15,7 +15,9 @@ import {
   ErrorP,
   ErrorLinkWrapper,
   ErrorLink,
-  ImgWrapper
+  ImgWrapper,
+  PriceWrapper,
+  ClearCartBtn
 } from "./Cart.module";
 const Cart = () => {
   const cartItems = useSelector(selectorCartItems);
@@ -29,7 +31,7 @@ const Cart = () => {
 
   return (
     <CartSection>
-      <CartTitle>Your cart: </CartTitle>
+      <CartTitle>Your bag: </CartTitle>
       {cartItems.length === 0 && (
         <>
           <ErrorP>Your cart is empty. Please, add something.</ErrorP>
@@ -49,9 +51,17 @@ const Cart = () => {
       </ul>
       {totalItems > 0 && (
         <div>
-          <p>Total items: {totalItems} </p>
-          <p>Total sum: {totalSum}$</p>
-          <button onClick={() => dispatch(clearCart())}>Clear cart</button>
+          <PriceWrapper>
+            <p>Total:</p>
+            <p>{totalSum}$</p>
+          </PriceWrapper>
+          <ClearCartBtn
+            type="button"
+            aria-label="clear cart"
+            onClick={() => dispatch(clearCart())}
+          >
+            Clear cart
+          </ClearCartBtn>
         </div>
       )}
     </CartSection>

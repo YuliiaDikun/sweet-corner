@@ -40,6 +40,7 @@ export const ProductInfo = styled.div`
 export const ProductTitle = styled.h3`
   color: ${({ theme }) => theme.colors.dark};
   font-weight: 500;
+  font-size: 18px;
 `;
 
 export const ProductPrice = styled.p`
