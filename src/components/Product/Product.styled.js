@@ -28,6 +28,7 @@ export const CandyWrapper = styled.div`
 export const ImgWrapper = styled(Link)`
   position: relative;
   overflow: hidden;
+  min-height: 250px;
   img {
     display: block;
     width: 100%;
