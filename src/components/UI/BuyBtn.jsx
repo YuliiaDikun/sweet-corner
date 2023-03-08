@@ -32,7 +32,7 @@ const MainBtn = ({ candy }) => {
   };
 
   return (
-    <StyledMainBtn onClick={onBuyBtnClick}>
+    <StyledMainBtn type="button" aria-label="buy item button" onClick={onBuyBtnClick}>
       {isInCart ? "Added to cart" : "Buy now"}
       <AiOutlineShoppingCart size={15} />
     </StyledMainBtn>
