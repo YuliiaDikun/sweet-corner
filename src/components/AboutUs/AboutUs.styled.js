@@ -19,8 +19,7 @@ export const Header = styled.h2`
 `;
 export const StyledParagraph = styled.p`
   max-width: ${({ theme }) => theme.spacing(200)};
-  margin: ${({ theme }) => theme.spacing(10)} auto
-    ${({ theme }) => theme.spacing(10)} auto;
+  margin-top: ${({ theme }) => theme.spacing(10)};
   text-align: center;
   font-weight: 500;
   color: ${({ theme }) => theme.colors.dark};
