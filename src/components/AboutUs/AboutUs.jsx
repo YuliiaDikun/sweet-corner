@@ -1,6 +1,7 @@
 import React from "react";
 import { Section, Header, StyledParagraph } from "./AboutUs.styled";
 import { TbCandy } from "react-icons/tb";
+import { Partners } from '../';
 const AboutUs = () => {
   return (
     <Section>
@@ -20,7 +21,7 @@ const AboutUs = () => {
         or simply indulging your sweet tooth, NONAME candy store has something
         for everyone to enjoy.
       </StyledParagraph>
-      
+      <Partners/>
     </Section>
   );
 };

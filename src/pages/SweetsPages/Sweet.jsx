@@ -33,7 +33,7 @@ const SweetDetails = () => {
   const [isLoading, setIsLoading] = useState(true);
   const location = useLocation();
   const backLinkHref = location.state?.from ?? "/sweets";
-  console.log(backLinkHref)
+  
   const { id } = useParams();
 
   const docRef = doc(db, "sweets", id);

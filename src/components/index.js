@@ -16,3 +16,4 @@ export { default as Categories } from "./Categories/Categories";
 export { default as AdditionalCandies } from "./AdditionalCandies/AdditionalCandies";
 export { default as CartItem } from "./CartItem/CartItem";
 export { default as Location } from "./Location/Location";
+export { default as Partners } from "./Partners/Partners";
