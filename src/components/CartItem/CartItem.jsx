@@ -2,39 +2,51 @@ import React from "react";
 import { removeItem, increase, decrease } from "../../redux/cart/cartSlice";
 import { IoIosArrowUp, IoIosArrowDown } from "react-icons/io";
 import { useDispatch } from "react-redux";
+import {
+  StyledLi,
+  ProductInfoWrapper,
+  ImgWrapper,
+  ProductInfo,
+  ProductTitle,
+  ProductPrice,
+  RemoveBtn,
+  AmountWrapper,
+  AmountBtn,
+  StyledAmount
+} from "./CartItem.styled";
 const CartItem = ({ sweet }) => {
   const { img, name, price, id, amount } = sweet;
   const dispatch = useDispatch();
   return (
-    <li>
-      <div>
-        <div>
+    <StyledLi>
+      <ProductInfoWrapper>
+        <ImgWrapper>
           <img src={img} alt={name} width="100" />
-        </div>
-        <div>
-          <h3>Name: {name}</h3>
-          <p>Price {price}</p>
-          <button
+        </ImgWrapper>
+        <ProductInfo>
+          <ProductTitle>{name}</ProductTitle>
+          <ProductPrice>{price} $</ProductPrice>
+          <RemoveBtn
             type="button"
             aria-label="remove item from cart"
             onClick={() => dispatch(removeItem(id))}
           >
-            Remove item
-          </button>
-        </div>
-      </div>
-      <div>
-        <button
+            remove
+          </RemoveBtn>
+        </ProductInfo>
+      </ProductInfoWrapper>
+      <AmountWrapper>
+        <AmountBtn
           type="button"
           aria-label="increase item in cart"
           onClick={() => {
             dispatch(increase({ id }));
           }}
         >
-          <IoIosArrowUp size={15} />
-        </button>
-        <p>Amount: {amount}</p>
-        <button
+          <IoIosArrowUp size={25} />
+        </AmountBtn>
+        <StyledAmount>{amount}</StyledAmount>
+        <AmountBtn
           type="button"
           aria-label="decrease item in cart"
           onClick={() => {
@@ -44,10 +56,10 @@ const CartItem = ({ sweet }) => {
             dispatch(decrease({ id }));
           }}
         >
-          <IoIosArrowDown size={15} />
-        </button>
-      </div>
-    </li>
+          <IoIosArrowDown size={25} />
+        </AmountBtn>
+      </AmountWrapper>
+    </StyledLi>
   );
 };
 

@@ -33,8 +33,8 @@ export const ErrorLink = styled(Link)`
 
   &:before {
     content: "";
-    left: -9px;
-    bottom: -28px;
+    left: ${({ theme }) => theme.spacing(-2)};
+    bottom: ${({ theme }) => theme.spacing(-7)};
     width: 100%;
     height: 2px;
     display: block;
