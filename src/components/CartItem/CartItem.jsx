@@ -1,6 +1,9 @@
 import React from "react";
+import { removeItem, increase, decrease } from "../../redux/cart/cartSlice";
 import { IoIosArrowUp, IoIosArrowDown } from "react-icons/io";
+import { useDispatch } from "react-redux";
 const CartItem = ({ sweet }) => {
+  const dispatch = useDispatch();
   return (
     <li>
       <div>
@@ -10,7 +13,12 @@ const CartItem = ({ sweet }) => {
         <div>
           <h3>Name: {sweet.name}</h3>
           <p>Price {sweet.price}</p>
-          <button>Remove item</button>
+          <button
+            type="button"
+            aria-label='remove item from cart'
+            onClick={() => dispatch(removeItem(sweet.id))}>
+            Remove item
+          </button>
         </div>
       </div>
       <div>
