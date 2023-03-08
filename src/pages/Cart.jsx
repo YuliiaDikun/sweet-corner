@@ -16,6 +16,7 @@ import { CartItem } from "../components";
 const Cart = () => {
   const cartItems = useSelector(selectorCartItems);
   const totalItems = useSelector(selectTotalAmount);
+  const dispatch = useDispatch();
   return (
     <section>
       <h2>Your cart: </h2>
@@ -33,7 +34,7 @@ const Cart = () => {
       {totalItems > 0 && (
         <div>
           <p>Total items: {totalItems} </p>
-          <button>Clear cart</button>
+          <button onClick={() => dispatch(clearCart())}>Clear cart</button>
         </div>
       )}
     </section>
