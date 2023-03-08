@@ -24,9 +24,9 @@ const Location = () => {
               <City>{location.city}</City>
               <Address>{location.address}</Address>
               <TimeWrapper>
-                {location.open.map((time) => {
+                {location.open.map((time, i) => {
                   return (
-                    <li>
+                    <li key={ i}>
                       <Days>{time.openDays}</Days>
                       <Hours>{time.openHours}</Hours>
                     </li>

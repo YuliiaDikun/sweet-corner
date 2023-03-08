@@ -17,11 +17,11 @@ const Product = ({ candy }) => {
   return (
     <Candy>
       <CandyWrapper>
-        <ImgWrapper to={`${candy.id}`}>
-          <img src={candy.img} alt={candy.name} state={{ from: location }} />
+        <ImgWrapper to={`${candy.id}`} state={{ from: location }}>
+          <img src={candy.img} alt={candy.name} />
         </ImgWrapper>
         <DescWrapper>
-          <CandyText to={`${candy.id}`}>{candy.name}</CandyText>
+          <CandyText to={`${candy.id}`} state={{ from: location }}>{candy.name}</CandyText>
           <CandyDesc>{candy.desc} </CandyDesc>
           <PriceWrapper>
             <Score scored={candy.scored} />

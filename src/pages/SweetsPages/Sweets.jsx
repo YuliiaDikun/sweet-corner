@@ -5,11 +5,13 @@ import { MainContent } from "./Sweet.styled";
 import { ProductsList, Loader, Filter, Categories } from "../../components";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { useSearchParams } from "react-router-dom";
 const SweetsPage = () => {
+  const [searchParams, setSearchParams] = useSearchParams();
   const [sweets, setSweets] = useState([]);
-  const [filter, setFiler] = useState("");
-  const [category, setCategory] = useState("");
+  const [filter, setFiler] = useState("");  
   const [isLoading, setIsLoading] = useState(true);
+  const category = searchParams.get("category") ?? '';
   const sweetsCollectionRef = collection(db, "sweets");
   useEffect(() => {
     getDocs(sweetsCollectionRef)
@@ -21,10 +23,16 @@ const SweetsPage = () => {
         setSweets(updateSweets);
       })
 
-      .catch(err=> toast.error(err.message))
+      .catch((err) => toast.error(err.message))
       .finally(setIsLoading(false));
     // eslint-disable-next-line
   }, []);
+
+  const updateQueryString = (category) => {
+    const nextParams = category !== "" ? { category } : {};
+    setSearchParams(nextParams);
+  };
+
   const onFilteredSweets = () => {
     const filteredSweets = [...sweets];
     if (!filter) return sweets;
@@ -42,10 +50,11 @@ const SweetsPage = () => {
     }
     return filteredSweets;
   };
-  const onCategoryOfSweets = (arr) => { 
-    if (!category) return arr;
-    return arr.filter(candy => candy.category === category)
-  }
+  const onCategoryOfSweets = (arr) => {
+    if (!category) return arr;    
+    return arr.filter((candy) => candy.category === category);
+  };
+
   const sorted = onFilteredSweets();
   const filtered = onCategoryOfSweets(sorted);
   return (
@@ -53,7 +62,7 @@ const SweetsPage = () => {
       {isLoading && <Loader />}
       <Filter updateFiler={setFiler} />
       <MainContent>
-        <Categories setCategory={setCategory } />
+        <Categories setCategory={updateQueryString} urlParams={category } />
         <ProductsList sweets={filtered} />
       </MainContent>
     </>
