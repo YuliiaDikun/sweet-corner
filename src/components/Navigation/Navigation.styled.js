@@ -86,6 +86,32 @@ export const HomeLink = styled(NavLink, Link)`
   position: relative;
 `;
 
+export const CartBtn = styled.button`
+  padding: ${({ theme }) => theme.spacing(2)} ${({ theme }) => theme.spacing(4)};
+  text-decoration: none;
+  color: ${({ theme }) => theme.colors.white};
+  background-color: transparent;
+  border: none;
+  font-size: 16px;
+  font-family: inherit;
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: ${({ theme }) => theme.spacing(1)};
+  position: relative;
+
+  &.active {
+    color: white;
+    border-bottom: 1px solid ${({ theme }) => theme.colors.white};
+  }
+  span {
+    font-size: 12px;
+    align-self: flex-start;
+    color: ${({ theme }) => theme.colors.white};
+  }
+`;
+
 export const StyledLink = styled(NavLink, Link)`
   padding: ${({ theme }) => theme.spacing(2)} ${({ theme }) => theme.spacing(4)};
   text-decoration: none;

@@ -7,13 +7,14 @@ import {
   HomeLink,
   Logo,
   MobileWrapper,
+  CartBtn
 } from "./Navigation.styled";
 import { AiOutlineShoppingCart, AiOutlineUser } from "react-icons/ai";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { MdClose } from "react-icons/md";
 import { onAuthStateChanged, signOut } from "firebase/auth";
 import { auth } from "../../firebase/config";
-import { Loader, ProtectedLink, PublicLink } from "../../components";
+import { Loader, ProtectedLink, PublicLink, Modal } from "../../components";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useNavigate } from "react-router";
@@ -23,6 +24,7 @@ import { selectIsLoggedIn } from "../../redux/auth/authSelectors";
 import { selectTotalAmount } from "../../redux/cart/cartSelectors";
 const Navigation = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [userName, setUserName] = useState("");
   const navigate = useNavigate();
@@ -73,20 +75,25 @@ const Navigation = () => {
       .finally(() => setIsLoading(false));
   };
 
-  
-  const cart = isLoggedIn ? (
-    <StyledLink to="/cart">
-      Cart <AiOutlineShoppingCart size={20} /> <span>{totalAmount}</span>
-    </StyledLink>
-  ) : (
-    <HomeLink to="/">
-      Cart <AiOutlineShoppingCart size={20} /> <span>{totalAmount}</span>
-    </HomeLink>
+  const onCartClicked = () => { 
+    if (isLoggedIn) {
+      navigate('/cart');
+      return;
+    } else { 
+      setIsModalOpen(true);
+    }
+  }
+
+  const cart = (
+    <CartBtn onClick={ onCartClicked}>
+      Cart <AiOutlineShoppingCart size={20} /><span>{totalAmount}</span>
+    </CartBtn>
   );
   const logo = <Logo to="/">Sweet Corner</Logo>;
   return (
     <>
       {isLoading && <Loader />}
+      {isModalOpen && <Modal onClose={() => setIsModalOpen(false)} />}
       <HederWrapper>
         {logo}
         <StyledNav open={isMobileMenuOpen}>
