@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/sweet-corner/static/css/main.0a3a7642.css",
+    "main.js": "/sweet-corner/static/js/main.3839755d.js",
+    "static/media/2-min.jpg": "/sweet-corner/static/media/2-min.de960412c650ed230f82.jpg",
+    "static/media/2.jpg": "/sweet-corner/static/media/2.75cef6314d56d71f8949.jpg",
+    "static/media/1.jpg": "/sweet-corner/static/media/1.de71e77bf3f910f8a670.jpg",
+    "static/media/6-min.jpg": "/sweet-corner/static/media/6-min.5023e7af08aa2b18ef2a.jpg",
+    "static/media/3.jpg": "/sweet-corner/static/media/3.b8b83db8f3ec5a3eb898.jpg",
+    "static/media/4-min.jpg": "/sweet-corner/static/media/4-min.abf1a5e37fe44b8f5b0f.jpg",
+    "static/media/1-min.jpg": "/sweet-corner/static/media/1-min.2821aa12a6b4c9fa4c8d.jpg",
+    "static/media/3-min.jpg": "/sweet-corner/static/media/3-min.297d93186dc181193e86.jpg",
+    "static/media/5-min.jpg": "/sweet-corner/static/media/5-min.0db90fb4cfe1836ff6d6.jpg",
+    "static/media/login.png": "/sweet-corner/static/media/login.7acce76d0252c0c245c6.png",
+    "static/media/empry-cart.png": "/sweet-corner/static/media/empry-cart.c5e551fb439dcb04d649.png",
+    "static/media/register.png": "/sweet-corner/static/media/register.bd4eebaf0b1723020409.png",
+    "index.html": "/sweet-corner/index.html",
+    "main.0a3a7642.css.map": "/sweet-corner/static/css/main.0a3a7642.css.map",
+    "main.3839755d.js.map": "/sweet-corner/static/js/main.3839755d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0a3a7642.css",
+    "static/js/main.3839755d.js"
+  ]
+}
