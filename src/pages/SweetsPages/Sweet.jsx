@@ -17,12 +17,15 @@ import {
   Loader,
 } from "../../components";
 import {
+  PageWrapper,
   StyledMain,
   ImgWrapper,
   DescrWrapper,
   StyledP,
   GoBackLink,
+  StyledProductTitle
 } from "./Sweet.styled";
+import { Container } from "../../components/SharedLayout/SharedLayout.styled";
 import { PriceWrapper } from "../../components/Product/Product.styled";
 import { MdOutlineArrowBackIosNew } from "react-icons/md";
 import { toast } from "react-toastify";
@@ -33,13 +36,13 @@ const SweetDetails = () => {
   const [isLoading, setIsLoading] = useState(true);
   const location = useLocation();
   const backLinkHref = location.state?.from ?? "/sweets";
-  
+
   const { id } = useParams();
 
   const docRef = doc(db, "sweets", id);
   useEffect(() => {
     getDoc(docRef)
-      .then((sweet) => { 
+      .then((sweet) => {
         const candy = sweet.data();
         candy.id = id;
         setSweet(candy);
@@ -77,33 +80,36 @@ const SweetDetails = () => {
   if (!sweet) return null;
 
   return (
-    <main>
-      <GoBackLink to={backLinkHref}>
-        <MdOutlineArrowBackIosNew size={20} /> Back to sweets
-      </GoBackLink>
-      {isLoading ? (
-        <Loader />
-      ) : (
-        <StyledMain>
-          <ImgWrapper>
-            <img src={sweet.img} alt={sweet.name} />
-          </ImgWrapper>
-          <DescrWrapper>
-            <h2>{sweet.name}</h2>
-            {sweet.full.map((par, i) => (
-              <StyledP key={i}>{par}</StyledP>
-            ))}
-            <PriceWrapper>
-              <Price price={sweet.price} />
-              <Score scored={sweet.scored} />
-            </PriceWrapper>
-            <MainBtn candy={sweet} />
-          </DescrWrapper>
-        </StyledMain>
-      )}
+    <PageWrapper>
+      <Container>
+        <GoBackLink to={backLinkHref}>
+          <MdOutlineArrowBackIosNew size={20} /> Back to sweets
+        </GoBackLink>
+        {isLoading ? (
+          <Loader />
+        ) : (
+          <StyledMain>
+            <ImgWrapper>
+              <img src={sweet.img} alt={sweet.name} />
+            </ImgWrapper>
+            <DescrWrapper>
+              <StyledProductTitle>{sweet.name}</StyledProductTitle>
+              <PriceWrapper>
+                <Price price={sweet.price} />
+                <Score scored={sweet.scored} />
+              </PriceWrapper>
+              {sweet.full.map((par, i) => (
+                <StyledP key={i}>{par}</StyledP>
+              ))}
 
-      {isLoading ? <Loader /> : <AdditionalCandies addCandy={addCandy} />}
-    </main>
+              <MainBtn candy={sweet} />
+            </DescrWrapper>
+          </StyledMain>
+        )}
+
+        {isLoading ? <Loader /> : <AdditionalCandies addCandy={addCandy} />}
+      </Container>
+    </PageWrapper>
   );
 };
 

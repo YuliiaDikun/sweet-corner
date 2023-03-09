@@ -4,7 +4,7 @@ import { Banner, AboutUs, Location} from '../components'
 const Main = () => {
   return (
     <main>      
-      <Banner />
+      <Banner />      
       <AboutUs />
       <Location/>
     </main>

@@ -23,6 +23,7 @@ export const ScoreWrapper = styled.div`
   display: flex;
   align-items: center;
   gap: ${({ theme }) => theme.spacing(2)};
+  color: ${({ theme }) => theme.colors.light};
 `;
 
 export const StyledPrice = styled.div`
@@ -30,4 +31,5 @@ export const StyledPrice = styled.div`
   align-items: center;
   font-size: ${({ theme }) => theme.spacing(4)};
   font-weight: 500;
+  font-size: ${({ theme }) => theme.spacing(5)};
 `;

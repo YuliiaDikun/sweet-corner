@@ -6,15 +6,18 @@ export const LocationList = styled.ul`
   justify-content: center;
   flex-direction: column;
   gap: 20px;
-  margin-bottom: 32px;
+  padding-top: 40px;
+  padding-bottom: 32px;
   @media screen and (min-width: 768px) {
     flex-direction: row;
     gap: 16px;
-    margin-bottom: 60px;
+    padding-top: 80px;
+    padding-bottom: 60px;
   }
   @media screen and (min-width: 1280px) {
     gap: 32px;
-    margin-bottom: 64px;
+    padding-top: 120px;
+    padding-bottom: 64px;
   }
 `;
 
@@ -22,7 +25,7 @@ export const LocationItem = styled.li`
   width: 100%;
   height: 412px;
   padding: 40px 32px;
-  background: ${({ theme }) => theme.colors.gray};
+  background: ${({ theme }) => theme.colors.white};
   box-shadow: 0px 8px 30px rgba(33, 44, 181, 0.1);
   border-radius: 24px;
   @media screen and (min-width: 768px) {
@@ -41,7 +44,7 @@ export const Type = styled.p`
   display: inline-block;
   padding: 0 23px;
   margin-bottom: 19px;
-  background: ${({ theme }) => theme.colors.accent};
+  background: ${({ theme }) => theme.colors.dark};
   border-radius: 4px;
   font-weight: 500;
   font-size: 12px;

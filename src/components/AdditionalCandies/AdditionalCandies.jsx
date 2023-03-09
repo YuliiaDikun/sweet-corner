@@ -1,6 +1,6 @@
 import React from "react";
 
-import { AdditionalList, AdditionalTitle,AdditionalLink, AdditionalImgWrapper } from "./AdditionalCandies.styled";
+import { AdditionalList, AdditionalTitle,AdditionalLink, AdditionalImgWrapper, AdditionalP } from "./AdditionalCandies.styled";
 const AdditionalCandies = ({ addCandy }) => {
   return (
     <>
@@ -12,7 +12,7 @@ const AdditionalCandies = ({ addCandy }) => {
               <AdditionalImgWrapper>
                 <img src={candy.img} alt={candy.name} />
               </AdditionalImgWrapper>
-              <p>{candy.name}</p>
+              <AdditionalP>{candy.name}</AdditionalP>
             </AdditionalLink>
           );
         })}

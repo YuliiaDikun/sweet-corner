@@ -6,7 +6,7 @@ export const HederWrapper = styled.div`
   align-items: center;
   justify-content: space-between;
   gap: 12px;
-  padding: 8px;
+  padding: 16px;
   margin-bottom: 16px;
   max-width: ${({ theme }) => theme.media.desktop};
   margin: 0 auto;
@@ -65,7 +65,8 @@ export const NavWrapper = styled.div`
 
 export const Logo = styled(NavLink)`
   display: inline-block;
-  font-weight: 700;
+  font-family: "Playfair Display SC", serif;
+  font-size: 20px;
   margin: 0;
   color: ${({ theme }) => theme.colors.white};
   &.active {

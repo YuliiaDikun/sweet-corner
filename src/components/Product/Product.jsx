@@ -4,8 +4,7 @@ import {
   CandyWrapper,
   ImgWrapper,
   DescWrapper,
-  CandyText,
-  CandyDesc,
+  CandyText,  
   PriceWrapper,
 } from "./Product.styled";
 import { MainBtn, Score, Price } from "../";
@@ -22,7 +21,7 @@ const Product = ({ candy }) => {
         </ImgWrapper>
         <DescWrapper>
           <CandyText to={`${candy.id}`} state={{ from: location }}>{candy.name}</CandyText>
-          <CandyDesc>{candy.desc} </CandyDesc>
+          
           <PriceWrapper>
             <Score scored={candy.scored} />
             <Price price={candy.price} />

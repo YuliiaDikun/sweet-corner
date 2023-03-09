@@ -29,13 +29,13 @@ export const StyledCategoryBtn = styled.button`
   margin-bottom: ${({ theme }) => theme.spacing(1)};
   gap: ${({ theme }) => theme.spacing(1)};
   border: 1px solid ${({ theme }) => theme.colors.dark};
-  color: ${({ isActive }) => (isActive ? `#002244` : `#ffffff`)};
-  background-color: ${({ isActive }) => (isActive ? `transparent` : `#002244`)};
+  color: ${({ isActive }) => (isActive ? `#323232` : `#ffffff`)};
+  background-color: ${({ isActive }) => (isActive ? `transparent` : `#323232`)};
   transition: color 0.3s, background-color 0.3s;
   border-radius: ${({ theme }) => theme.spacing(1)};
   cursor: pointer;
   &:hover {
     color: ${({ theme }) => theme.colors.dark};
-    background-color: ${({ theme }) => theme.colors.white};
+    background-color: transparent;
   }
 `;

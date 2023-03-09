@@ -36,7 +36,8 @@ export const Content = styled.div`
   align-items: center;
   flex-direction: column;
   transform: translateX(-50%);
-  background: rgba(255, 251, 251, 0.7);
+  background-color: rgba(255, 251, 251, 0.7);
+  border-radius: ${({ theme }) => theme.spacing(2)};
   animation: slider 1s ease 0.5s;
   animation-fill-mode: forwards;
   h2 {
@@ -54,6 +55,7 @@ export const Link = styled.a`
   color: ${({ theme }) => theme.colors.dark};
   font-weight: 700;
   border: 1px solid ${({ theme }) => theme.colors.dark};
+  border-radius: 4px;
   transition: color 0.3s, border 0.3s;
   &:hover {
     color: ${({ theme }) => theme.colors.accent};
@@ -63,11 +65,11 @@ export const Link = styled.a`
 
 export const Line = styled.hr`
   height: 2px;
-  background-color: ${({ theme }) => theme.colors.accent};
+  background-color: ${({ theme }) => theme.colors.white};
   width: 50%;
 `;
 export const iconStyle = {
-  border: `2px solid ${theme.colors.accent}`,
+  border: `2px solid ${theme.colors.white}`,
   borderRadius: "50%",
   background: "transparent",
   color: "#fff",
@@ -81,9 +83,9 @@ export const iconStyle = {
 };
 export const next = {
   right: "1.5rem",
-  color: `${theme.colors.accent}`,
+  color: `${theme.colors.white}`,
 };
 export const prev = {
   left: "1.5rem",
-  color: `${theme.colors.accent}`,
+  color: `${theme.colors.white}`,
 };

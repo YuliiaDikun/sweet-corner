@@ -9,6 +9,7 @@ import {
 } from "../../redux/cart/cartSelectors";
 import { clearCart, calculateTotal } from "../../redux/cart/cartSlice";
 import { CartItem } from "../../components";
+import { Container } from "../../components/SharedLayout/SharedLayout.styled";
 import {
   CartSection,
   CartTitle,
@@ -31,6 +32,7 @@ const Cart = () => {
 
   return (
     <CartSection>
+      <Container>
       <CartTitle>Your bag: </CartTitle>
       {cartItems.length === 0 && (
         <>
@@ -63,7 +65,8 @@ const Cart = () => {
             Clear cart
           </ClearCartBtn>
         </div>
-      )}
+        )}
+        </Container>
     </CartSection>
   );
 };

@@ -3,9 +3,11 @@ import styled from "styled-components";
 
 export const CartSection = styled.section`
   text-align: center;
+  background-color: ${({ theme }) => theme.colors.white};
+  padding-top: ${({ theme }) => theme.spacing(10)};
   @media screen and (min-width: 768px) {
-    padding-left: 120px;
-    padding-right: 120px;
+    padding-left: ${({ theme }) => theme.spacing(30)};
+    padding-right: ${({ theme }) => theme.spacing(30)};
   }
 `;
 

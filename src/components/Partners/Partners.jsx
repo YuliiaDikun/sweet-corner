@@ -1,10 +1,10 @@
 import React from "react";
 import { partners } from "./partners-icon";
-import { PartnersWrapper, PartnersList, PartnerItem } from "./Partners.styled";
+import { PartnersWrapper,PartnersTitle, PartnersList, PartnerItem } from "./Partners.styled";
 const Partners = () => {
   return (
     <PartnersWrapper>
-      <h2>Our Partners:</h2>
+      <PartnersTitle>Our Partners:</PartnersTitle>
       <PartnersList>
         {partners.map((partner, i) => {
           return <PartnerItem key={i}>{partner.svg}</PartnerItem>;

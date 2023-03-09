@@ -1,17 +1,18 @@
 import React, { useState, useEffect } from "react";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../../firebase/config";
-import { MainContent } from "./Sweet.styled";
+import { MainContent,PageWrapper } from "./Sweet.styled";
 import { ProductsList, Loader, Filter, Categories } from "../../components";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useSearchParams } from "react-router-dom";
+import { Container } from "../../components/SharedLayout/SharedLayout.styled";
 const SweetsPage = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const [sweets, setSweets] = useState([]);
-  const [filter, setFiler] = useState("");  
+  const [filter, setFiler] = useState("");
   const [isLoading, setIsLoading] = useState(true);
-  const category = searchParams.get("category") ?? '';
+  const category = searchParams.get("category") ?? "";
   const sweetsCollectionRef = collection(db, "sweets");
   useEffect(() => {
     getDocs(sweetsCollectionRef)
@@ -51,21 +52,23 @@ const SweetsPage = () => {
     return filteredSweets;
   };
   const onCategoryOfSweets = (arr) => {
-    if (!category) return arr;    
+    if (!category) return arr;
     return arr.filter((candy) => candy.category === category);
   };
 
   const sorted = onFilteredSweets();
   const filtered = onCategoryOfSweets(sorted);
   return (
-    <>
-      {isLoading && <Loader />}
-      <Filter updateFiler={setFiler} />
-      <MainContent>
-        <Categories setCategory={updateQueryString} urlParams={category } />
-        <ProductsList sweets={filtered} />
-      </MainContent>
-    </>
+    <PageWrapper>
+      <Container>
+        {isLoading && <Loader />}
+        <Filter updateFiler={setFiler} />
+        <MainContent>
+          <Categories setCategory={updateQueryString} urlParams={category} />
+          <ProductsList sweets={filtered} />
+        </MainContent>
+      </Container>
+    </PageWrapper>
   );
 };
 

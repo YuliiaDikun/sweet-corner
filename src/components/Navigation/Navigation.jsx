@@ -83,7 +83,7 @@ const Navigation = () => {
       Cart <AiOutlineShoppingCart size={20} /> <span>{totalAmount}</span>
     </HomeLink>
   );
-  const logo = <Logo to="/">NONAME SHOP</Logo>;
+  const logo = <Logo to="/">Sweet Corner</Logo>;
   return (
     <>
       {isLoading && <Loader />}

@@ -1,8 +1,17 @@
 import styled from "styled-components";
 
+export const Wrapper = styled.div`
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  main {
+    flex-grow: 1;
+    background-color: ${({ theme }) => theme.colors.white};
+  }
+`;
+
 export const Container = styled.div`
   margin: 0 auto;
-  min-height: 90vh;
   padding-left: ${({ theme }) => theme.spacing(5)};
   padding-right: ${({ theme }) => theme.spacing(5)};
   @media screen and (min-width: ${({ theme }) => theme.media.mobile}) {

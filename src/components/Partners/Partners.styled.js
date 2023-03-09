@@ -1,8 +1,12 @@
 import styled from "styled-components";
 
 export const PartnersWrapper = styled.div`
-  padding-top: ${({ theme }) => theme.spacing(10)};
+  padding-top: ${({ theme }) => theme.spacing(25)};
   text-align: center;
+`;
+
+export const PartnersTitle = styled.h2`
+  color: ${({ theme }) => theme.colors.white};
 `;
 
 export const PartnersList = styled.ul`
@@ -16,14 +20,14 @@ export const PartnersList = styled.ul`
 
 export const PartnerItem = styled.li`
   padding: ${({ theme }) => theme.spacing(4)} ${({ theme }) => theme.spacing(5)};
-  border: 1px solid ${({ theme }) => theme.colors.grey};
-  color: ${({ theme }) => theme.colors.grey};
-  fill: ${({ theme }) => theme.colors.grey};
+  border: 1px solid ${({ theme }) => theme.colors.white};
+  color: ${({ theme }) => theme.colors.white};
+  fill: ${({ theme }) => theme.colors.white};
   border-radius: ${({ theme }) => theme.spacing(2)};
   transition: color 0.3s, border-color 0.3s, fill 0.3s;
   &:hover {
-    border-color: ${({ theme }) => theme.colors.dark};
-    color: ${({ theme }) => theme.colors.dark};
-    fill: ${({ theme }) => theme.colors.dark};
+    border-color: ${({ theme }) => theme.colors.grey};
+    color: ${({ theme }) => theme.colors.grey};
+    fill: ${({ theme }) => theme.colors.grey};
   }
 `;
