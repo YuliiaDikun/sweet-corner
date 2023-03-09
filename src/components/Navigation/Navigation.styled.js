@@ -100,7 +100,7 @@ export const CartBtn = styled.button`
   align-items: center;
   gap: ${({ theme }) => theme.spacing(1)};
   position: relative;
-
+  cursor: pointer;
   &.active {
     color: white;
     border-bottom: 1px solid ${({ theme }) => theme.colors.white};

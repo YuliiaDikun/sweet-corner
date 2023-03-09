@@ -30,3 +30,48 @@ export const StyledParagraph = styled.p`
   font-weight: 500;
   color: ${({ theme }) => theme.colors.white};
 `;
+
+export const Parent = styled.div`
+  display: grid;
+  height: 400px;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-column-gap: 8px;
+  grid-row-gap: 8px;
+  img {
+    display: block;
+    width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+    object-position: 50% 50%;
+  }
+  @media screen and (min-width: 768px) {
+    height: 800px;
+  }
+`;
+
+export const First = styled.div`
+  grid-area: 1 / 1 / 3 / 3;
+  overflow: hidden;
+`;
+
+export const Second = styled.div`
+  grid-area: 3 / 1 / 4 / 3;
+  overflow: hidden;
+`;
+export const Third = styled.div`
+  grid-area: 1 / 3 / 2 / 7;
+  overflow: hidden;
+`;
+export const Fourth = styled.div`
+  grid-area: 2 / 3 / 4 / 6;
+  overflow: hidden;
+`;
+export const Fifth = styled.div`
+  grid-area: 2 / 6 / 3 / 7;
+  overflow: hidden;
+`;
+export const Sixth = styled.div`
+  grid-area: 3 / 6 / 4 / 7;
+  overflow: hidden;
+`;

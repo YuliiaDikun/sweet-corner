@@ -21,9 +21,13 @@ export const CandyWrapper = styled.div`
   text-decoration: none;
   overflow: hidden;
   border-radius: 8px;
-  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  transition: box-shadow 0.3s, transform 0.3s;
   &:hover {
     box-shadow: ${({ theme }) => theme.shadows.small};
+    img {
+      transform: scale(1.1) rotate(0.01deg);
+    }
   }
 `;
 export const ImgWrapper = styled(Link)`
@@ -37,15 +41,16 @@ export const ImgWrapper = styled(Link)`
     width: 100%;
     min-height: 100%;
     object-fit: cover;
+    transition: all 0.4s;
   }
 `;
 export const DescWrapper = styled.div`
   flex-grow: 1;
-  padding: ${({ theme }) => theme.spacing(5)} ${({ theme }) => theme.spacing(6)};
+  padding: ${({ theme }) => theme.spacing(3)} ${({ theme }) => theme.spacing(5)};
   border-right: 1px solid #eee;
   border-bottom: 1px solid #eee;
   border-left: 1px solid #eee;
-  border-radius: 8px;
+  border-radius: ${({ theme }) => theme.spacing(2)};
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -55,7 +60,6 @@ export const CandyText = styled(Link)`
   font-size: ${({ theme }) => theme.spacing(5)};
   font-weight: 500;
   color: ${({ theme }) => theme.colors.dark};
-  padding-top: 10px;
   padding-bottom: 5px;
   &:before {
     content: "";

@@ -71,7 +71,7 @@ export const PriceWrapper = styled.span`
   justify-content: space-between;
   align-items: center;
   p {
-    font-size: 20px;
+    font-size: ${({ theme }) => theme.spacing(5)};
     color: ${({ theme }) => theme.colors.dark};
     text-transform: uppercase;
     font-weight: 700;
@@ -80,15 +80,25 @@ export const PriceWrapper = styled.span`
 
 export const ClearCartBtn = styled.button`
   cursor: pointer;
-  padding: 8px 16px;
+  padding: ${({ theme }) => theme.spacing(2)} ${({ theme }) => theme.spacing(4)};
   background-color: transparent;
   border: 1px solid ${({ theme }) => theme.colors.accent};
-  border-radius: 4px;
+  border-radius: ${({ theme }) => theme.spacing(1)};
   color: ${({ theme }) => theme.colors.accent};
-  font-size: 18px;
+  font-size: ${({ theme }) => theme.spacing(5)};
   font-weight: 500;
   transition: transform 0.3s;
   &:hover {
     transform: scale(1.01);
+  }
+`;
+
+export const MoreShopping = styled.p`
+  padding-top: ${({ theme }) => theme.spacing(4)};
+  font-size: ${({ theme }) => theme.spacing(5)};
+  font-weight: 500;
+  color: ${({ theme }) => theme.colors.dark};
+  a {
+    color: ${({ theme }) => theme.colors.accent};
   }
 `;

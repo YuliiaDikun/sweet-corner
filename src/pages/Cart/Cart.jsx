@@ -18,8 +18,10 @@ import {
   ErrorLink,
   ImgWrapper,
   PriceWrapper,
-  ClearCartBtn
+  ClearCartBtn,
+  MoreShopping
 } from "./Cart.module";
+import { Link } from "react-router-dom";
 const Cart = () => {
   const cartItems = useSelector(selectorCartItems);
   const totalItems = useSelector(selectTotalAmount);
@@ -36,7 +38,7 @@ const Cart = () => {
       <CartTitle>Your bag: </CartTitle>
       {cartItems.length === 0 && (
         <>
-          <ErrorP>Your cart is empty. Please, add something.</ErrorP>
+          <ErrorP>Your shopping cart is empty.</ErrorP>
           <ErrorLinkWrapper>
             <ErrorLink to="/sweets">Go to the shopping! </ErrorLink>
             <RiShoppingBasketLine size={20} />
@@ -63,10 +65,12 @@ const Cart = () => {
             onClick={() => dispatch(clearCart())}
           >
             Clear cart
-          </ClearCartBtn>
+            </ClearCartBtn>
+            <MoreShopping>Looking for more? <Link to='/sweets'>Continue shopping</Link></MoreShopping>
         </div>
         )}
-        </Container>
+      </Container>
+      
     </CartSection>
   );
 };
