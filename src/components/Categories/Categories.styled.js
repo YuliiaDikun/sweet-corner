@@ -1,22 +1,14 @@
 import styled from "styled-components";
 
-export const CategoryWrapper = styled.aside`
-  padding-top: ${({ theme }) => theme.spacing(2)};
+export const CategoryWrapper = styled.ul`
+  padding-top: ${({ theme }) => theme.spacing(6)};
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   flex-wrap: wrap;
   gap: ${({ theme }) => theme.spacing(1)};
   @media screen and (min-width: 768px) {
     gap: ${({ theme }) => theme.spacing(2)};
-    max-width: 250px;
-  }
-`;
-
-export const CategoryTitle = styled.p`
-  display: none;
-  @media screen and (min-width: 768px) {
-    display: block;
-    font-size: ${({ theme }) => theme.spacing(5)};
   }
 `;
 
@@ -28,14 +20,18 @@ export const StyledCategoryBtn = styled.button`
   width: 100%;
   margin-bottom: ${({ theme }) => theme.spacing(1)};
   gap: ${({ theme }) => theme.spacing(1)};
-  border: 1px solid ${({ theme }) => theme.colors.dark};
-  color: ${({ isActive }) => (isActive ? `#323232` : `#ffffff`)};
-  background-color: ${({ isActive }) => (isActive ? `transparent` : `#323232`)};
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 1px solid ${({ theme }) => theme.colors.light};
+  color: ${({ isActive }) => (isActive ? `#ffffff` : `#898989`)};
+  background-color: ${({ isActive }) => (isActive ? `#898989` : `transparent`)};
   transition: color 0.3s, background-color 0.3s;
-  border-radius: ${({ theme }) => theme.spacing(1)};
+  border-radius: ${({ isActive }) => (isActive ? `4px` : `0px`)};
   cursor: pointer;
   &:hover {
-    color: ${({ theme }) => theme.colors.dark};
-    background-color: transparent;
+    color: ${({ theme }) => theme.colors.white};
+    background-color: ${({ theme }) => theme.colors.light};
+    border-radius: 4px;
   }
 `;

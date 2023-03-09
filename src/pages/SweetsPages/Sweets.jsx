@@ -63,8 +63,8 @@ const SweetsPage = () => {
       <Container>
         {isLoading && <Loader />}
         <Filter updateFiler={setFiler} />
-        <MainContent>
-          <Categories setCategory={updateQueryString} urlParams={category} />
+        <Categories setCategory={updateQueryString} urlParams={category} />
+        <MainContent>          
           <ProductsList sweets={filtered} />
         </MainContent>
       </Container>

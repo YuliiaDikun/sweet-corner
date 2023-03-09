@@ -29,7 +29,7 @@ const Filter = ({ updateFiler}) => {
         low rating <AiOutlineStar />
       </FilterBtn>
       <FilterBtn data-filter="" onClick={onFilterBtn}>
-        Reset <RxCross1 />
+        reset <RxCross1 />
       </FilterBtn>
     </FilterWrapper>
   );

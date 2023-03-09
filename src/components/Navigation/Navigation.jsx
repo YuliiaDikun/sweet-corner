@@ -9,7 +9,8 @@ import {
   MobileWrapper,
   CartBtn
 } from "./Navigation.styled";
-import { AiOutlineShoppingCart, AiOutlineUser } from "react-icons/ai";
+import { BsMinecart } from 'react-icons/bs';
+import {  AiOutlineUser } from "react-icons/ai";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { MdClose } from "react-icons/md";
 import { onAuthStateChanged, signOut } from "firebase/auth";
@@ -86,7 +87,7 @@ const Navigation = () => {
 
   const cart = (
     <CartBtn onClick={ onCartClicked}>
-      Cart <AiOutlineShoppingCart size={20} /><span>{totalAmount}</span>
+      Cart <BsMinecart size={20} /><span>{totalAmount}</span>
     </CartBtn>
   );
   const logo = <Logo to="/">Sweet Corner</Logo>;

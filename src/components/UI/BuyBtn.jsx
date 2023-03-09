@@ -1,12 +1,12 @@
 import React from "react";
-import { AiOutlineShoppingCart } from "react-icons/ai";
+
 import { StyledMainBtn } from "./UI.styled";
 import { useDispatch, useSelector } from "react-redux";
 import { selectorCartItems } from "../../redux/cart/cartSelectors";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { addToCart } from "../../redux/cart/cartSlice";
-
+import { BsMinecart } from 'react-icons/bs';
 const MainBtn = ({ candy }) => {
   const cartItems = useSelector(selectorCartItems);
   const dispatch = useDispatch();
@@ -31,7 +31,7 @@ const MainBtn = ({ candy }) => {
       onClick={onBuyBtnClick}
     >
       {isInCart ? "Added to cart" : "Buy now"}
-      <AiOutlineShoppingCart size={15} />
+      <BsMinecart size={15} />
     </StyledMainBtn>
   );
 };

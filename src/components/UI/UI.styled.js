@@ -3,9 +3,10 @@ import styled from "styled-components";
 export const StyledMainBtn = styled.button`
   display: inline-flex;
   margin-top: ${({ theme }) => theme.spacing(2)};
-  padding: 8px 16px;
+  padding: ${({ theme }) => theme.spacing(2)} ${({ theme }) => theme.spacing(4)};
   justify-content: center;
   align-items: center;
+  gap: ${({ theme }) => theme.spacing(1)};
   border: 1px solid ${({ theme }) => theme.colors.dark};
   border-radius: ${({ theme }) => theme.spacing(1)};
   background-color: transparent;

@@ -26,7 +26,10 @@ export const AdditionalLink = styled(Link)`
 
 export const AdditionalTitle = styled.h3`
   padding-top: ${({ theme }) => theme.spacing(5)};
-  color: ${({ theme }) => theme.colors.dark};
+  border-top: 2px solid ${({ theme }) => theme.colors.grey};
+  color: ${({ theme }) => theme.colors.light};
+  text-transform: uppercase;
+  text-align: center;
 `;
 
 export const AdditionalImgWrapper = styled.div`

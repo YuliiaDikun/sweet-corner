@@ -4,7 +4,8 @@ import { Link } from "react-router-dom";
 export const StyledAuth = styled.section`
   min-height: 90vh;
   display: flex;
-  justify-content: space-evenly;
+  gap: ${({ theme }) => theme.spacing(4)};
+  justify-content: center;
   align-items: center;
 `;
 export const ImgWrapper = styled.div`

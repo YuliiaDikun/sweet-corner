@@ -4,7 +4,7 @@ import { AdditionalList, AdditionalTitle,AdditionalLink, AdditionalImgWrapper, A
 const AdditionalCandies = ({ addCandy }) => {
   return (
     <>
-      <AdditionalTitle>You may also like:</AdditionalTitle>
+      <AdditionalTitle>Related products</AdditionalTitle>
       <AdditionalList>
         {addCandy.map((candy) => {
           return (

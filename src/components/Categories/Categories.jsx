@@ -1,6 +1,6 @@
 import React from "react";
 import { category } from "./category-data";
-import { CategoryWrapper, CategoryTitle } from "./Categories.styled";
+import { CategoryWrapper } from "./Categories.styled";
 import CategoryBtn from "./CategoryBtn";
 import { useState } from "react";
 const Categories = ({ setCategory, urlParams }) => {
@@ -14,20 +14,17 @@ const Categories = ({ setCategory, urlParams }) => {
 
   return (
     <CategoryWrapper>
-      <CategoryTitle>Categories: </CategoryTitle>
-      <ul>
-        {category.map((cat) => {
-          return (
-            <CategoryBtn
-              isActive={active === cat.data || cat.data === urlParams}
-              key={cat.id}
-              info={cat}
-              activeButton={activeButton}
-              onSelectedCategory={onSelectedCategory}
-            />
-          );
-        })}
-      </ul>
+      {category.map((cat) => {
+        return (
+          <CategoryBtn
+            isActive={active === cat.data || cat.data === urlParams}
+            key={cat.id}
+            info={cat}
+            activeButton={activeButton}
+            onSelectedCategory={onSelectedCategory}
+          />
+        );
+      })}
     </CategoryWrapper>
   );
 };

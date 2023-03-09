@@ -7,6 +7,7 @@ export const PageWrapper = styled.main`
 
 export const StyledMain = styled.div`
   padding-top: ${({ theme }) => theme.spacing(5)};
+  padding-bottom: ${({ theme }) => theme.spacing(7)};
   @media screen and (min-width: 768px) {
     display: flex;
     justify-content: center;
