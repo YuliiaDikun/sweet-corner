@@ -20,6 +20,8 @@ export const Header = styled.h2`
   display: flex;
   justify-content: center;
   align-items: center;
+  font-family: "Playfair Display SC", serif;
+  text-transform: uppercase;
   gap: ${({ theme }) => theme.spacing(2)};
   color: ${({ theme }) => theme.colors.white};
 `;

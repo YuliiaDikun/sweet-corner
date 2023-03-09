@@ -41,6 +41,8 @@ export const Content = styled.div`
   animation: slider 1s ease 0.5s;
   animation-fill-mode: forwards;
   h2 {
+    font-family: "Playfair Display SC", serif;
+    text-transform: uppercase;
     font-size: ${({ theme }) => theme.spacing(10)};
     color: ${({ theme }) => theme.colors.dark};
   }

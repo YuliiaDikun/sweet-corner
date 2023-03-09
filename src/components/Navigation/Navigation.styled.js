@@ -122,7 +122,7 @@ export const StyledLink = styled(NavLink, Link)`
   align-items: center;
   gap: ${({ theme }) => theme.spacing(1)};
   position: relative;
-
+  font-family: inherit;
   &.active {
     color: white;
     border-bottom: 1px solid ${({ theme }) => theme.colors.white};

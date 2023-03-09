@@ -53,7 +53,7 @@ export const Type = styled.p`
   color: ${({ theme }) => theme.colors.white};
   text-transform: uppercase;
   @media screen and (min-width: 768px) {
-    padding: 0 13px;
+    padding: 4px 12px;
     height: 28px;
     font-size: 16px;
     margin-bottom: 32px;
