@@ -4,7 +4,7 @@ import { PartnersWrapper, PartnersList, PartnerItem } from "./Partners.styled";
 const Partners = () => {
   return (
     <PartnersWrapper>
-      <h2 className="visually-hidden">Partners</h2>
+      <h2>Our Partners:</h2>
       <PartnersList>
         {partners.map((partner, i) => {
           return <PartnerItem key={i}>{partner.svg}</PartnerItem>;

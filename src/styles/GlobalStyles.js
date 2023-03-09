@@ -4,7 +4,7 @@ export const GlobalStyleComponent = createGlobalStyle`
 body {
   height: 100vh;
   color:${({ theme }) => theme.colors.dark};
-  background-color: ${({ theme }) => theme.colors.white};
+  background-color: ${({ theme }) => theme.colors.mainBackground};
 }
   img {
     display: block;
