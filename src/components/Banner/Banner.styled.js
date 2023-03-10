@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { theme } from "../../styles/theme";
+import { Link } from "react-router-dom";
 export const Slider = styled.div`
   width: 100%;
   height: 90vh;
@@ -51,7 +52,7 @@ export const Content = styled.div`
     color: ${({ theme }) => theme.colors.dark};
   }
 `;
-export const Link = styled.a`
+export const StyledLink = styled(Link)`
   display: block;
   padding: ${({ theme }) => theme.spacing(2)} ${({ theme }) => theme.spacing(4)};
   color: ${({ theme }) => theme.colors.dark};

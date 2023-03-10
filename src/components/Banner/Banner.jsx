@@ -5,7 +5,7 @@ import {
   Slider,
   Slide,
   Content,
-  Link,
+  StyledLink,
   Line,
   iconStyle,
   next,
@@ -49,7 +49,7 @@ const Banner = () => {
                   <h2>{heading}</h2>
                   <p>{desc}</p>
                   <Line />
-                  <Link href="#product">Shop now</Link>
+                  <StyledLink to='/sweets'>Shop now</StyledLink>
                 </Content>
               </>
             )}
