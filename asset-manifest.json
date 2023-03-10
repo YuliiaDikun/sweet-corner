@@ -1,7 +1,14 @@
 {
   "files": {
     "main.css": "/sweet-corner/static/css/main.0a3a7642.css",
-    "main.js": "/sweet-corner/static/js/main.3839755d.js",
+    "main.js": "/sweet-corner/static/js/main.315a8311.js",
+    "static/js/865.d77ccebe.chunk.js": "/sweet-corner/static/js/865.d77ccebe.chunk.js",
+    "static/js/984.280b6187.chunk.js": "/sweet-corner/static/js/984.280b6187.chunk.js",
+    "static/js/34.6a8e06d0.chunk.js": "/sweet-corner/static/js/34.6a8e06d0.chunk.js",
+    "static/js/257.2afafb1d.chunk.js": "/sweet-corner/static/js/257.2afafb1d.chunk.js",
+    "static/js/825.c2f2173d.chunk.js": "/sweet-corner/static/js/825.c2f2173d.chunk.js",
+    "static/js/518.98f40b63.chunk.js": "/sweet-corner/static/js/518.98f40b63.chunk.js",
+    "static/js/425.6b6de4bc.chunk.js": "/sweet-corner/static/js/425.6b6de4bc.chunk.js",
     "static/media/2-min.jpg": "/sweet-corner/static/media/2-min.de960412c650ed230f82.jpg",
     "static/media/2.jpg": "/sweet-corner/static/media/2.75cef6314d56d71f8949.jpg",
     "static/media/1.jpg": "/sweet-corner/static/media/1.de71e77bf3f910f8a670.jpg",
@@ -16,10 +23,17 @@
     "static/media/register.png": "/sweet-corner/static/media/register.bd4eebaf0b1723020409.png",
     "index.html": "/sweet-corner/index.html",
     "main.0a3a7642.css.map": "/sweet-corner/static/css/main.0a3a7642.css.map",
-    "main.3839755d.js.map": "/sweet-corner/static/js/main.3839755d.js.map"
+    "main.315a8311.js.map": "/sweet-corner/static/js/main.315a8311.js.map",
+    "865.d77ccebe.chunk.js.map": "/sweet-corner/static/js/865.d77ccebe.chunk.js.map",
+    "984.280b6187.chunk.js.map": "/sweet-corner/static/js/984.280b6187.chunk.js.map",
+    "34.6a8e06d0.chunk.js.map": "/sweet-corner/static/js/34.6a8e06d0.chunk.js.map",
+    "257.2afafb1d.chunk.js.map": "/sweet-corner/static/js/257.2afafb1d.chunk.js.map",
+    "825.c2f2173d.chunk.js.map": "/sweet-corner/static/js/825.c2f2173d.chunk.js.map",
+    "518.98f40b63.chunk.js.map": "/sweet-corner/static/js/518.98f40b63.chunk.js.map",
+    "425.6b6de4bc.chunk.js.map": "/sweet-corner/static/js/425.6b6de4bc.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.0a3a7642.css",
-    "static/js/main.3839755d.js"
+    "static/js/main.315a8311.js"
   ]
 }

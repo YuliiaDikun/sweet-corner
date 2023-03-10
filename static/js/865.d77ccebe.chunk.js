@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunksweet_corner=self.webpackChunksweet_corner||[]).push([[865],{6865:function(e,s,n){n.r(s);n(2791);var r=n(6670),c=n(184);s.default=function(){return(0,c.jsxs)("main",{children:[(0,c.jsx)(r.jL,{}),(0,c.jsx)(r.gc,{}),(0,c.jsx)(r.Ye,{})]})}}}]);
+//# sourceMappingURL=865.d77ccebe.chunk.js.map
