@@ -19,14 +19,14 @@ export const FilterBtn = styled.button`
   border-left: none;
   border-right: none;
   border-bottom: 1px solid ${({ theme }) => theme.colors.light};
-  color: ${({ theme }) => theme.colors.light};
-  background-color: transparent;
-  transition: color 0.3s, background-color 0.3s;
+  color: ${({ active }) => (active ? `#ffffff` : `#898989`)};
+  background-color: ${({ active }) => (active ? `#898989` : `transparent`)};
+  border-radius: ${({ active }) => (active ? `4px` : `0px`)};
+  transition: color 0.3s, background-color 0.3s, border-radius 0.3s;
   cursor: pointer;
-  &:hover,
-  &:focus {
+  &:hover {
     color: ${({ theme }) => theme.colors.white};
-    background-color: ${({ theme }) => theme.colors.dark};
+    background-color: ${({ theme }) => theme.colors.light};
     border-radius: ${({ theme }) => theme.spacing(1)};
   }
 `;

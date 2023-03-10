@@ -11,7 +11,7 @@ const SweetsPage = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const [sweets, setSweets] = useState([]);
   const [filter, setFiler] = useState("");
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(true); 
   const category = searchParams.get("category") ?? "chocolate";
   const sweetsCollectionRef = collection(db, "sweets");
   useEffect(() => {
@@ -34,9 +34,21 @@ const SweetsPage = () => {
     setSearchParams(nextParams);
   };
 
+  const onFilterClicked = (value) => { 
+    setFiler(prev => { 
+      if (prev === value) {        
+        console.log('this is second click');
+        return '';
+      } else { 
+        console.log('this is first click');
+        return value;
+      }
+    })
+  }
+
   const onFilteredSweets = () => {
     const filteredSweets = [...sweets];
-    if (!filter) return sweets;
+    if (!filter) return sweets;    
     if (filter === "low-p") {
       filteredSweets.sort((a, b) => a.price - b.price);
     }
@@ -62,7 +74,7 @@ const SweetsPage = () => {
     <PageWrapper>
       <Container>
         {isLoading && <Loader />}
-        <Filter updateFiler={setFiler} />
+        <Filter updateFiler={onFilterClicked} filter={ filter} />
         <Categories setCategory={updateQueryString} urlParams={category} />
         <MainContent>          
           <ProductsList sweets={filtered} />
