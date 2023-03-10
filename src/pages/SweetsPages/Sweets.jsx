@@ -12,7 +12,7 @@ const SweetsPage = () => {
   const [sweets, setSweets] = useState([]);
   const [filter, setFiler] = useState("");
   const [isLoading, setIsLoading] = useState(true);
-  const category = searchParams.get("category") ?? "";
+  const category = searchParams.get("category") ?? "chocolate";
   const sweetsCollectionRef = collection(db, "sweets");
   useEffect(() => {
     getDocs(sweetsCollectionRef)
